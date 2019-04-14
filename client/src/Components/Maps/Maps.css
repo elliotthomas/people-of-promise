@@ -1,0 +1,23 @@
+.map-container {
+    padding: 2rem 0 0 0;
+}
+
+
+.map {
+    background-image: url("../../images/map-example.jpg");
+    width: calc(100%/2); 
+    height: 1200px;
+}
+
+.verse {
+    font-weight: bold;
+}
+
+.cover-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }

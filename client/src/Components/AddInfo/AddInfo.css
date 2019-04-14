@@ -1,0 +1,11 @@
+.display-linebreak {
+    white-space: pre-line;
+  }
+
+  .input-fields {
+    margin: 0 auto;
+}
+
+.header {
+  font-size: 26pt;
+}
