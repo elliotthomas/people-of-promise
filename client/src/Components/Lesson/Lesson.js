@@ -44,7 +44,7 @@ class Lesson extends Component {
 
   render() {
     return (
-        <div>
+        <div className ='scroll cover-image'>
             <h1 className = "lesson-heading">{this.state.title}</h1>
             <p className = "lesson-text"><Markup content= {this.state.scripture}/></p>
 <p className ="verse">{this.state.citation}</p>
