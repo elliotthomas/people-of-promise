@@ -84,11 +84,14 @@ class App extends Component {
           header: true,
           showCalander: false
         })
+    }
 
-
-
-
-      }
+    goToCalendar = () => {
+      this.setState({
+        showCalander: true,
+        header: false
+      })
+    }
 
 
 render() {
@@ -96,6 +99,7 @@ render() {
       <Router>
       <div className="App">
         <header className={this.state.auth  && this.state.header ? "App-header" : 'hidden' }>
+        <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Calendar</Link>
         <Link className = "link-options" to = '/lesson'>Lesson</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
         <Link className = "link-options" to = '/timeline'>Timeline</Link>
