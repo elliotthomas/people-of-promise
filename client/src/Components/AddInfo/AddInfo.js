@@ -21,7 +21,9 @@ class AddInfo extends Component {
     dateArray: '',
     namesDone: '',
     namesForDel: '',
-    nameDel: ''
+    nameDel: '', 
+    questionToAdd: '',
+    nameForQuestion: ''
   }
 
   getAllPeople = async () => {
@@ -136,6 +138,13 @@ selectNameToDelete = (event) => {
   console.log('in select', this.state.nameDel)
 }
 
+selectQuestionToAdd = (event) => {
+  const name = event.currentTarget.value
+  this.setState({
+    nameForQuestion: name
+  })
+}
+
 handleSubmitPerson = async event => {
 event.preventDefault();
 const objectToSend = {
@@ -175,6 +184,26 @@ handleDeletePerson = async event => {
   this.setState({ responseToPost: body });
   this.getAllPeople();
   }
+
+  questionToAdd = async event => {
+    event.preventDefault();
+    const name = this.state.nameForQuestion;
+    const question = this.state.questionToAdd;
+    const objectToSend = {
+      name: name,
+      question: question
+    }
+    const response = await fetch('/api/addAQuestion', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(objectToSend),
+    });
+    const body = await response.text();
+    this.setState({ responseToPost: body });
+    this.getAllPeople();
+    }
 
 render() {
     return (
@@ -225,6 +254,19 @@ render() {
       {this.state.namesForDel}
       </Form.Control>
       <Button variant="primary" type="submit">Delete</Button>
+  </Form>
+  <Form onSubmit={this.addQuestion}>
+      <p>
+        <strong className = "header">Add Question for Person</strong>
+      </p>
+      <Form.Control onChange ={this.selectQuestionToAdd} as="select">
+      <option>Select Question to Add</option>
+      {this.state.namesForDel}
+      </Form.Control>
+      <Form.Group controlId="formQuestion">
+    <Form.Control onChange= {this.handleChangeFor('questionToAdd')} value = {this.state.questionToAdd} placeholder="Question To Add" />
+  </Form.Group>
+      <Button variant="primary" type="submit">Add Question</Button>
   </Form>
         </div>
     );

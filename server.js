@@ -70,6 +70,22 @@ app.get('/api/people', (req, res) => {
     })
   });
 
+  app.post('/api/questionToAdd', (req, res) => {
+
+    console.log(req.body.name)
+
+    const {name, nickname, title, intro, scripture, citation, prayer, nameToSend} = {name: null, nickname: null, title: null, intro: null, scripture: null, citation: null, prayer: null, nameToSend: req.body.name};
+
+    pool.query('INSERT INTO questions AS p SET bname = $1, nickname = $2, title = $3, intro = $4, scripture = $5, citation = $6, prayer = $7 WHERE p.bname = $8', [name, nickname, title, intro, scripture, citation, prayer, nameToSend], (error, results) => {
+      if (error) {
+        throw error
+      }
+      res.send(
+        `I received your POST request and added it to the Database. This is what you sent me:`,
+      );
+    })
+  });
+
   app.post('/api/checkUser', (req, res) => {
     const username = 'plcchurch';
     const password = 'godislove';

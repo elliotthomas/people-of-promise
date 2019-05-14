@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
   max-width: 1300px;
@@ -46,6 +48,16 @@ input {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'chalkdustregular';
+  src: url('../../Fonts/chalkdust.woff2') format('woff2'),
+       url('../../Fonts/chalkdust.woff') format('woff'),
+       url('../../Fonts/Gabriola.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
@@ -57,8 +69,13 @@ input {
   }
 }
 
-.calendar {
-  background-image: url("../../images/cal-menu.png");
+.welcome-text {
+  font-family: 'chalkdustregular';
+  font-size: 72pt;
+}
+
+.welcome-image {
+  background-image: url("../../images/welcome-page-image.png");
   width: 100%;
   height: 1000px;
   margin: 0 auto;
@@ -75,205 +92,6 @@ input {
   background-size: cover;
 }
 
-.calendar-link {
-    color: black;
-    position: absolute;
-    font-size: 16pt;
-}
-
-.calendar-link:hover {
-  text-decoration: underline!important;
-  cursor: pointer;
-}
-
-.day-1 {
-  top: 12%;
-  left: 6%;
-}
-
-.day-2 {
-  top: 19%;
-  left: 12%;
-}
-
-.day-3 {
-  top: 12%;
-  left: 23%;
-}
-
-.day-4 {
-  top: 27%;
-  left: 23%;
-}
-
-.day-5 {
-  top: 19%;
-  left: 35%;
-}
-
-.day-6 {
-  top: 12%;
-  left: 45%;
-}
-
-.day-7 {
-  top: 30%;
-  left: 43%;
-}
-
-.day-8 {
-  top: 21%;
-  left: 50%;
-}
-
-.day-9 {
-  top: 11%;
-  left: 59%;
-}
-
-.day-10 {
-  top: 20%;
-  right: 24%;
-}
-
-.day-11 {
-  top: 10%;
-  right: 15%;
-
-}
-.day-12 {
-  top: 36%;
-  left: 10%;
-}
-.day-13 {
-  top: 45%;
-  left: 28%;
-}
-.day-15 {
-  top: 40%;
-  left: 39%;
-}
-.day-16 {
-  top: 45%;
-  left: 50%;
-}
-
-.day-16 {
-  top: 45%;
-  left: 50%;
-}
-
-.day-17 {
-  top: 33%;
-  left: 58%;
-}
-
-.day-18 {
-  top: 43%;
-  left: 66%;
-}
-
-.day-19 {
-  top: 45%;
-  right: 18%;
-}
-
-.day-20 {
-  top: 34%;
-  right: 8%;
-}
-
-.day-21 {
-  top: 58%;
-  left: 10%;
-
-}
-
-.day-22 {
-  top: 58%;
-  left: 20%;
-}
-
-.day-23 {
-  top: 63%;
-  left: 28%;
-}
-
-.day-24 {
-  top: 63%;
-  left: 38%;
-  transform: rotate(-90deg);
-}
-
-.day-25 {
-  top: 63%;
-  left: 46%;
-}
-
-.day-26 {
-  top: 59%;
-  left: 56%;
-}
-
-.day-27 {
-  top: 63%;
-  right: 26%;
-}
-
-.day-28 {
-  top: 66%;
-  right: 12%;
-}
-
-.day-29 {
-  top: 78%;
-  left: 16%;
-}
-
-.day-30 {
-  top: 80%;
-  left: 29%;
-}
-
-.day-31 {
-  top: 78%;
-  left: 36%;
-}
-
-.day-32 {
-  top: 79%;
-  left: 48%;
-}
-
-.day-33 {
-  top: 73%;
-  left: 55%;
-}
-
-.day-34 {
-  top: 83%;
-  left: 61%;
-}
-
-.day-35 {
-  top: 78%;
-  right: 27%;
-}
-
-.day-36 {
-  top: 82%;
-  right: 20%;
-}
-
-.day-37 {
-  top: 77%;
-  right: 15%;
-}
-
-.day-38 {
-  top: 79%;
-  right: 8%;
-}
 
 
 
