@@ -193,7 +193,7 @@ handleDeletePerson = async event => {
       name: name,
       question: question
     }
-    const response = await fetch('/api/addAQuestion', {
+    const response = await fetch('/api/questionToAdd', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -255,7 +255,7 @@ render() {
       </Form.Control>
       <Button variant="primary" type="submit">Delete</Button>
   </Form>
-  <Form onSubmit={this.addQuestion}>
+  <Form onSubmit={this.questionToAdd}>
       <p>
         <strong className = "header">Add Question for Person</strong>
       </p>

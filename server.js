@@ -31,6 +31,15 @@ app.get('/api/people', (req, res) => {
 })
   });
 
+  app.get('/api/getAllQuestions', (req, res) => {
+    pool.query ('Select * FROM questions', (error, results) => {
+      if(error) {
+          throw error
+      }
+      res.status(200).json(results.rows)
+  })
+    });
+
   app.post('/api/onePerson', (req, res) => {
     const {date} = {date: req.body.date.date}
     pool.query ('Select * FROM people_of_promise as p WHERE p.displaydate = $1', [date], (error, results) => {
@@ -72,11 +81,11 @@ app.get('/api/people', (req, res) => {
 
   app.post('/api/questionToAdd', (req, res) => {
 
-    console.log(req.body.name)
+    console.log(req.body)
 
-    const {name, nickname, title, intro, scripture, citation, prayer, nameToSend} = {name: null, nickname: null, title: null, intro: null, scripture: null, citation: null, prayer: null, nameToSend: req.body.name};
+    const {name, question} = {name: req.body.name, question: req.body.question};
 
-    pool.query('INSERT INTO questions AS p SET bname = $1, nickname = $2, title = $3, intro = $4, scripture = $5, citation = $6, prayer = $7 WHERE p.bname = $8', [name, nickname, title, intro, scripture, citation, prayer, nameToSend], (error, results) => {
+    pool.query('INSERT INTO questions (person_name, question) VALUES ($1, $2)', [name, question], (error, results) => {
       if (error) {
         throw error
       }

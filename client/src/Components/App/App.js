@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import AddInfo from '../AddInfo/AddInfo'
 import Maps from '../Maps/Maps'
-import Lesson from '../Lesson/Lesson'
-import Study from '../Study/Study'
 import Timeline from '../Timeline/Timeline'
 import Tiles from '../Tiles/Tiles'
 import TitlePerson from '../TitlePerson/TitlePerson'
@@ -108,9 +106,10 @@ render() {
       <Router>
       <div className="App">
         <header className={this.state.auth  && this.state.header ? "App-header" : 'hidden' }>
-        <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Calendar</Link>
-        <Link className = "link-options" to = '/lesson'>Lesson</Link>
+        <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
+        <Link className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
+        <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
         <Link className = "link-options" to = '/timeline'>Timeline</Link>
         <Link className = "link-options" to = '/gallery'>Gallery</Link>
         <Link className = "link-options" to = '/youth'>Youth</Link>
@@ -155,7 +154,7 @@ render() {
       </div>
       <Link style={{ textDecoration: 'none', color: 'black' }} to = '/welcome' onClick={this.hideImage}>
       <h1 className ={this.state.auth && this.state.showCalander ? 'welcome-text' : "hidden"}>Welcome to</h1>
-      <div className ={this.state.auth && this.state.showCalander ? 'welcome-image cover-image' : "hidden"}>
+      <div className ={this.state.auth && this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
        <h1 className ={this.state.auth && this.state.showCalander ? 'welcome-text' : "hidden"}>Click anywhere to enter this site</h1>
        </Link>
@@ -164,9 +163,6 @@ render() {
         />
         <Route 
         path = '/maps' render = {() => (this.state.auth ? <Maps /> : <Redirect to = '/'/>)}
-        />
-        <Route 
-        path = '/lesson' render = {() => (this.state.auth ? <Lesson date = {this.state.dateToSend}/> : <Redirect to = '/'/>)}
         />
         <Route 
         path = '/timeline' render = {() => (this.state.auth ? <Timeline/> : <Redirect to = '/'/>)}

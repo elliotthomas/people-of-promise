@@ -4,23 +4,44 @@
     font-size: 60px;
 }
 
-.title-verse {
-    font-family: 'chalkdustregular';
-    margin: 0 auto;
-    font-size: 40px;
-}
 
 .text-heading {
-    position: absolute;
-    top: 200px;
-    left: 28%;
+    text-align: left;
+    font-weight: bold;
 }
 
-  .leaves {
-    background-image: url("../../images/leaves.png");
-    width: 92%;
-    height: 1000px;
-    padding: 0 0 0 0;
-    position: absolute;
-    top: 50px;
+.lesson-intro {
+    text-align: left;
+}
+
+.lesson-text {
+    text-align: left;
+    line-height: 1.3;
+    width: 500px;
+}
+.verse {
+    text-align: right;
+    width: 500px;
+}
+
+.questions {
+    text-align: left;
+}
+
+.prayer {
+    text-align: left;
+}
+
+.questions {
+    text-align: left;
+}
+
+
+.cover-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }

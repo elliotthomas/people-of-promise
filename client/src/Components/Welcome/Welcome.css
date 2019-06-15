@@ -1,7 +1,13 @@
 .welcome-pop {
     font-family: 'chalkdustregular';
     margin: 0 auto;
-    padding-top: 25%;
+    padding-top: 5%;
     font-size: 60px;
-
 };
+
+.welcome-intro {
+    text-align: center;
+    font-size: 12pt;
+    margin-top: 5%;
+    font-family: 'chalkdustregular';
+}
