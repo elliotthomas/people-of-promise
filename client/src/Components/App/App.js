@@ -8,7 +8,6 @@ import TitlePerson from '../TitlePerson/TitlePerson'
 import Gallery from '../Gallery/Gallery'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Welcome from '../Welcome/Welcome';
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 
 class App extends Component {
@@ -179,9 +178,6 @@ render() {
         />
         <Route 
         path = '/gallery' render = {() => (this.state.auth ? <Gallery name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
-        />
-        <Route 
-        path = '/welcome' render = {() => (this.state.auth ? <Welcome/> : <Redirect to = '/'/>)}
         />
         <Route 
         path = '/tiles' render = {() => (this.state.auth ? <Tiles clickLink ={this.clickLink}/> : <Redirect to = '/'/>)}
