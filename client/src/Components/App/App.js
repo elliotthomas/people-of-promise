@@ -114,7 +114,7 @@ render() {
     return (
       <Router>
       <div className="App">
-        <header className={this.state.auth  && this.state.header ? "App-header" : 'hidden' }>
+        <header className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
         <Link className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
@@ -124,66 +124,29 @@ render() {
         <Link className = "link-options" to = '/youth'>Youth</Link>
         <Link className = "link-options" to = '/addInfo'>Admin Page</Link>
         </header>
-        <div className= {this.state.auth ? "hidden" : 'Login'}>
-      <h1>Website Coming Soon...</h1>
-        <Form 
-        onSubmit={this.checkUser}>
-          <Form.Group controlId="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              autoFocus
-              type="text"
-              value={this.state.email}
-              onChange={this.handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              User is incorrect
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group controlId="password">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-            <Form.Control.Feedback type="invalid">
-              Password is incorrect
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Button
-            block
-            disabled={!this.validateForm()}
-            type="submit"
-          >
-            Login
-          </Button>
-
-        </Form>
-      </div>
       <Link style={{ textDecoration: 'none', color: 'black' }} to = '/tiles' onClick={this.hideImage}>
-      <h1 className ={this.state.auth && this.state.showCalander ? 'welcome-text' : "hidden"}>Welcome to</h1>
-      <div className ={this.state.auth && this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
+      <h1 className ={this.state.showCalander ? 'welcome-text' : "hidden"}>Welcome to</h1>
+      <div className ={this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
-       <h1 className ={this.state.auth && this.state.showCalander ? 'welcome-text' : "hidden"}>Click anywhere to enter this site</h1>
+       <h1 className ={this.state.showCalander ? 'welcome-text' : "hidden"}>Click anywhere to enter this site</h1>
        </Link>
         <Route 
-         path = '/addInfo' render = {() => (this.state.auth ? <AddInfo /> : <Redirect to = '/'/>)}
+         path = '/addInfo' render = {() => (<AddInfo />)}
         />
         <Route 
-        path = '/maps' render = {() => (this.state.auth ? <Maps name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
+        path = '/maps' render = {() => (<Maps name = {this.state.nameToSend}/>)}
         />
         <Route 
-        path = '/timeline' render = {() => (this.state.auth ? <Timeline name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
+        path = '/timeline' render = {() => (<Timeline name = {this.state.nameToSend}/>)}
         />
         <Route 
-        path = '/gallery' render = {() => (this.state.auth ? <Gallery name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
+        path = '/gallery' render = {() => (<Gallery name = {this.state.nameToSend}/>)}
         />
         <Route 
-        path = '/tiles' render = {() => (this.state.auth ? <Tiles clickLink ={this.clickLink}/> : <Redirect to = '/'/>)}
+        path = '/tiles' render = {() => (<Tiles clickLink ={this.clickLink}/>)}
         />
                 <Route 
-        path = '/titlePerson' render = {() => (this.state.auth ? <TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/> : <Redirect to = '/'/>)}
+        path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}
         />
       </div>
       </Router>
