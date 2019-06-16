@@ -55,16 +55,16 @@
 .columns {
     -webkit-column-count: 2;
     column-count: 2;
-    width: 984px;
+    width: 975px;
     position: absolute;
-    left: 147px;
-    top: 317px;
-    height: 592px;
-    line-height: 1;
+    left: 152px;
+    top: 390px;
+    height: 1100px;
+    line-height: 1.1;
     -webkit-column-gap: 60px;
     grid-column-gap: 60px;
-    grid-column-gap: 28px;
     -webkit-column-gap: 28px;
+    grid-column-gap: 28px;
     column-gap: 28px;
 
     
@@ -73,8 +73,9 @@
 .scroll {
     background-image: url("../../images/scroll.png");
     width: 1200px;
-    height: 750px;
+    height: 1300px;
     margin: 0 auto;
+    margin-top: -75px;
 }
 
 
