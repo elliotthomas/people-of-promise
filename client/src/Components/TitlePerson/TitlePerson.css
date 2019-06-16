@@ -57,10 +57,12 @@
     column-count: 2;
     width: 1040px;
     position: absolute;
-    left: 233px;
+    left: 165px;
     top: 317px;
-    height: 653px;
+    height: 636px;
     line-height: 1.1;
+    grid-column-gap: 60px;
+    -webkit-column-gap: 60px;
     column-gap: 60px;
     
 }
