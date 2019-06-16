@@ -58,11 +58,13 @@
     width: 984px;
     position: absolute;
     left: 147px;
-    top: 355px;
-    height: 558px;
-    line-height: 1.1;
+    top: 317px;
+    height: 592px;
+    line-height: 1;
     -webkit-column-gap: 60px;
     grid-column-gap: 60px;
+    grid-column-gap: 28px;
+    -webkit-column-gap: 28px;
     column-gap: 28px;
 
     
