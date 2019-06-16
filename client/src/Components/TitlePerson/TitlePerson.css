@@ -58,8 +58,8 @@
     width: 975px;
     position: absolute;
     left: 152px;
-    top: 390px;
-    height: 1100px;
+    top: 360px;
+    height: 877px;
     line-height: 1.1;
     -webkit-column-gap: 60px;
     grid-column-gap: 60px;
@@ -73,9 +73,10 @@
 .scroll {
     background-image: url("../../images/scroll.png");
     width: 1200px;
-    height: 1300px;
+    height: 1250px;
     margin: 0 auto;
     margin-top: -75px;
+    background-size: 100% 100%!important;
 }
 
 
