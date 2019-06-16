@@ -36,6 +36,20 @@
     text-align: left;
 }
 
+.intro-welcome {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.2;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-size: 14pt;
+}
+
+.outer-div {
+    max-width: 1200px;
+}
+
 
 .cover-image {
     background-repeat: no-repeat;

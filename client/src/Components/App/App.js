@@ -5,6 +5,7 @@ import Maps from '../Maps/Maps'
 import Timeline from '../Timeline/Timeline'
 import Tiles from '../Tiles/Tiles'
 import TitlePerson from '../TitlePerson/TitlePerson'
+import Gallery from '../Gallery/Gallery'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Welcome from '../Welcome/Welcome';
@@ -19,7 +20,8 @@ class App extends Component {
     validated: false,
     header: false,
     showCalander: true,
-    dateToSend: ''
+    dateToSend: '',
+    nameToSend: ''
   };
 
   componentDidMount() {
@@ -86,6 +88,14 @@ class App extends Component {
           showCalander: false
         })
     }
+
+    clickLinkName = (event) => {
+      this.setState({
+        nameToSend: event.currentTarget.getAttribute('data-value'),
+        header: true,
+        showCalander: false
+      })
+  }
 
     goToCalendar = () => {
       this.setState({
@@ -162,10 +172,13 @@ render() {
          path = '/addInfo' render = {() => (this.state.auth ? <AddInfo /> : <Redirect to = '/'/>)}
         />
         <Route 
-        path = '/maps' render = {() => (this.state.auth ? <Maps /> : <Redirect to = '/'/>)}
+        path = '/maps' render = {() => (this.state.auth ? <Maps name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
         />
         <Route 
-        path = '/timeline' render = {() => (this.state.auth ? <Timeline/> : <Redirect to = '/'/>)}
+        path = '/timeline' render = {() => (this.state.auth ? <Timeline name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
+        />
+        <Route 
+        path = '/gallery' render = {() => (this.state.auth ? <Gallery name = {this.state.nameToSend}/> : <Redirect to = '/'/>)}
         />
         <Route 
         path = '/welcome' render = {() => (this.state.auth ? <Welcome/> : <Redirect to = '/'/>)}
@@ -174,7 +187,7 @@ render() {
         path = '/tiles' render = {() => (this.state.auth ? <Tiles clickLink ={this.clickLink}/> : <Redirect to = '/'/>)}
         />
                 <Route 
-        path = '/titlePerson' render = {() => (this.state.auth ? <TitlePerson date = {this.state.dateToSend}/> : <Redirect to = '/'/>)}
+        path = '/titlePerson' render = {() => (this.state.auth ? <TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/> : <Redirect to = '/'/>)}
         />
       </div>
       </Router>
