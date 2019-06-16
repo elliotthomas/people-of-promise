@@ -162,7 +162,7 @@ render() {
 
         </Form>
       </div>
-      <Link style={{ textDecoration: 'none', color: 'black' }} to = '/welcome' onClick={this.hideImage}>
+      <Link style={{ textDecoration: 'none', color: 'black' }} to = '/tiles' onClick={this.hideImage}>
       <h1 className ={this.state.auth && this.state.showCalander ? 'welcome-text' : "hidden"}>Welcome to</h1>
       <div className ={this.state.auth && this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
