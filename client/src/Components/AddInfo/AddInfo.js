@@ -202,6 +202,7 @@ handleDeletePerson = async event => {
     });
     const body = await response.text();
     this.setState({ responseToPost: body });
+    this.setState({ questionToAdd: '' });
     this.getAllPeople();
     }
 
