@@ -125,10 +125,8 @@ render() {
         <Link className = "link-options" to = '/addInfo'>Admin Page</Link>
         </header>
       <Link style={{ textDecoration: 'none', color: 'black' }} to = '/tiles' onClick={this.hideImage}>
-      <h1 className ={this.state.showCalander ? 'welcome-text' : "hidden"}>Welcome to</h1>
       <div className ={this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
-       <h1 className ={this.state.showCalander ? 'welcome-text' : "hidden"}>Click anywhere to enter this site</h1>
        </Link>
         <Route 
          path = '/addInfo' render = {() => (<AddInfo />)}
