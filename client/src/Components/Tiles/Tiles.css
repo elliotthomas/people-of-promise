@@ -1,10 +1,9 @@
 .tiles {
     background-image: url("../../images/cal-menu.png");
-    width: 100%;
+    width: 110%;
     height: 635px;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
+    position: fixed;
+    left: -56px;
     background-size: 100% 100%!important;
   }
 
@@ -12,7 +11,6 @@
     font-family: chalkdustregular;
     font-size: 22pt;
     margin: 0;
-    padding-right: 76px;
   }
   
   .cover-image {
