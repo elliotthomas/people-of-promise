@@ -54,29 +54,26 @@
 .columns {
     -webkit-column-count: 2;
     column-count: 2;
-    width: 960px;
+    width: 75%;
     position: absolute;
-    left: 152px;
-    top: 360px;
-    height: 885px;
+    left: 10%;
+    top: 16%;
     line-height: 1.2;
-    -webkit-column-gap: 60px;
-    grid-column-gap: 60px;
-    -webkit-column-gap: 28px;
-    grid-column-gap: 28px;
-    column-gap: 46px;
-    column-fill: AUTO;
+    column-gap: 13%;
+    column-fill: balance;
 
     
 }
 
 .scroll {
     background-image: url("../../images/scroll.png");
-    width: 1200px;
-    height: 1250px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
     margin: 0 auto;
     margin-top: -75px;
     background-size: 100% 100%!important;
+    position: relative;
 }
 
 

@@ -47,6 +47,7 @@ class Tiles extends Component {
         <a onClick={this.props.clickLink} data-value = '2020-05-03' href= '#titlePerson' className = 'calendar-link day-36'>May 3</a>
         <a onClick={this.props.clickLink} data-value = '2020-05-10' href= '#titlePerson' className = 'calendar-link day-37'>May 10</a>
         <a onClick={this.props.clickLink} data-value = '2020-05-17' href= '#titlePerson' className = 'calendar-link day-38'>May 17</a>
+        <a onClick={this.props.clickLink} data-value = '2020-05-24' href= '#titlePerson' className = 'calendar-link day-39'>May 24</a>
   </div>
   </div>
     );

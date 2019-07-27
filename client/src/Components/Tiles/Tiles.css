@@ -1,9 +1,9 @@
 .tiles {
     background-image: url("../../images/cal-menu.png");
-    width: 112%;
-    height: 665px;
+    width: 108%;
+    height: 102%;
     position: fixed;
-    left: -69px;
+    left: -64px;
     background-size: 100% 100%!important;
   }
 
@@ -168,8 +168,8 @@
   }
   
   .day-28 {
-    top: 66%;
-    right: 12%;
+    top: 52%;
+    right: 9%;
   }
   
   .day-29 {
@@ -213,11 +213,16 @@
   }
   
   .day-37 {
-    top: 77%;
-    right: 15%;
+    top: 65%;
+    right: 12%;
   }
   
   .day-38 {
-    top: 79%;
+    top: 78%;
+    right: 14.5%;
+  }
+
+  .day-39 {
+    top: 78%;
     right: 8%;
   }
