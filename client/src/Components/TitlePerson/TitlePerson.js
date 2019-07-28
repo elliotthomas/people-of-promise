@@ -8,6 +8,11 @@ class Lesson extends Component {
     this.getAllQuestions();
   }
 
+  componentDidMount() { 
+    this.getOnePerson();
+    this.getAllQuestions();
+  }
+
   state = {
     name: '',
     nickname: '',
@@ -17,7 +22,8 @@ class Lesson extends Component {
     citation: '',
     prayer: '',
     questions: '',
-    date: ''
+    date: '',
+    elementHeight: 0
   }
 
   getOnePerson = async () => {
@@ -122,6 +128,13 @@ class Lesson extends Component {
     return formattedDate
 }
 
+getHeight = (element) => {
+  if (element && !this.state.elementHeight) {
+    this.setState({ elementHeight: element.clientHeight });
+  }
+  console.log('client height', this.state.elementHeight)
+}
+
   render() {
     return (
         <div className= "outer-div">
@@ -129,12 +142,12 @@ class Lesson extends Component {
             <h1 className = "title-heading">{this.state.name}</h1>
             <h3 className = "date-text">Week of {this.state.date}</h3>
             <div className ="scroll cover-image">
-            <div className ="columns">
+            <div ref={this.getHeight} className ="columns">
             <h4 className = "text-heading">Introduction</h4>
             <p className = "lesson-intro"><Markup content= {this.state.intro}/></p>
             <h4 className = "text-heading">Scripture</h4>
             <p className = "lesson-text"><Markup content= {this.state.scripture}/></p>
-            <p className ="verse">{this.state.citation}</p>
+            {/* <p className ="verse">{this.state.citation}</p> */}
             <h4 className = "text-heading">Questions</h4>
             <ol className = "questions">
               {this.state.questions}
