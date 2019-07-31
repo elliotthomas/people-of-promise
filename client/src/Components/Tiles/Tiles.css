@@ -5,12 +5,14 @@
     position: fixed;
     left: -64px;
     background-size: 100% 100%!important;
+    background-color: rgb(240, 220, 130)!important;
   }
 
   .tiles-header {
     font-family: chalkdustregular;
     font-size: 22pt;
     margin: 0;
+    background-color: rgb(240, 220, 130)!important;
   }
   
   .cover-image {

@@ -6,6 +6,7 @@ import Timeline from '../Timeline/Timeline'
 import Tiles from '../Tiles/Tiles'
 import TitlePerson from '../TitlePerson/TitlePerson'
 import Gallery from '../Gallery/Gallery'
+import GalleryPics from '../GalleryPics/GalleryPics'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
@@ -110,6 +111,7 @@ class App extends Component {
     }
 
 
+
 render() {
     return (
       <Router>
@@ -138,7 +140,10 @@ render() {
         path = '/timeline' render = {() => (<Timeline name = {this.state.nameToSend}/>)}
         />
         <Route 
-        path = '/gallery' render = {() => (<Gallery name = {this.state.nameToSend}/>)}
+        path = '/gallery' render = {() => (<Gallery galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}
+        />
+                <Route 
+        path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/tiles' render = {() => (<Tiles clickLink ={this.clickLink}/>)}
