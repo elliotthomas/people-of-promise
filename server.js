@@ -2,21 +2,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
-// const Pool = require('pg').Pool;
-const { Pool } = require('pg')
-const connectionString = 'postgres://zbwjfhgtnjldlq:afd1247bb9521ad86d4719bd6c0b843ca7f7e4224d87db08581e8104924807db@ec2-54-243-241-62.compute-1.amazonaws.com:5432/d1cicr1tudjneq'
-
-const pool = new Pool({
-  connectionString: connectionString,
-})
+const Pool = require('pg').Pool;
+// const { Pool } = require('pg')
+// const connectionString = 'postgres://zbwjfhgtnjldlq:afd1247bb9521ad86d4719bd6c0b843ca7f7e4224d87db08581e8104924807db@ec2-54-243-241-62.compute-1.amazonaws.com:5432/d1cicr1tudjneq'
 
 // const pool = new Pool({
-//   user: 'me',
-//   host: 'localhost',
-//   database: 'plc',
-//   password: 'password',
-//   port: 5432
-// });
+//   connectionString: connectionString,
+// })
+
+const pool = new Pool({
+  user: 'me',
+  host: 'localhost',
+  database: 'plc',
+  password: 'password',
+  port: 5432
+});
 
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());

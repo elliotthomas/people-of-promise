@@ -7,8 +7,7 @@ import Tiles from '../Tiles/Tiles'
 import TitlePerson from '../TitlePerson/TitlePerson'
 import Gallery from '../Gallery/Gallery'
 import GalleryPics from '../GalleryPics/GalleryPics'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import IntroPerson from '../IntroPerson/IntroPerson'
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 
 class App extends Component {
@@ -23,12 +22,6 @@ class App extends Component {
     dateToSend: '',
     nameToSend: ''
   };
-
-  componentDidMount() {
-    this.getAllPeople()
-      .then(res => this.setState({ response: res }))
-      .catch(err => console.log(err));
-  }
 
   getAllPeople = async () => {
     const response = await fetch('/api/people');
@@ -118,7 +111,7 @@ render() {
       <div className="App">
         <header className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
-        <Link className = "link-options" to = '/tiles'>Calendar</Link>
+        <Link onClick = {this.goToCalendar} className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
         <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
         <Link className = "link-options" to = '/timeline'>Timeline</Link>
@@ -144,6 +137,9 @@ render() {
         />
                 <Route 
         path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend}/>)}
+        />
+        <Route 
+        path = '/introPerson' render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/tiles' render = {() => (<Tiles clickLink ={this.clickLink}/>)}

@@ -8,11 +8,6 @@ class Lesson extends Component {
     this.getAllQuestions();
   }
 
-  componentDidMount() { 
-    this.getOnePerson();
-    this.getAllQuestions();
-  }
-
   state = {
     name: '',
     nickname: '',
@@ -22,8 +17,7 @@ class Lesson extends Component {
     citation: '',
     prayer: '',
     questions: '',
-    date: '',
-    elementHeight: 0
+    date: ''
   }
 
   getOnePerson = async () => {
