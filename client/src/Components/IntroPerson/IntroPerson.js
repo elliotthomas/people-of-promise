@@ -10,7 +10,8 @@ class IntroPerson extends Component {
   state = {
     name: '',
     citation: '',
-    border: ''
+    border: '',
+    goToTitlePerson: false
   };
 
   getOnePerson = async () => {
@@ -33,10 +34,18 @@ class IntroPerson extends Component {
        border: imageUrl 
      })
   }
+  goToTitlePerson = () => {
+    this.setState({
+      goToTitlePerson: true
+    })
+  }
   render() {
+    if(this.state.goToTitlePerson) {
+      return <Redirect to='/titlePerson' />
+    }
     return (
             <div className = "background-border">
-            <div style = {{backgroundImage: `url(${this.state.border})`}} className ="border" >
+            <div style = {{backgroundImage: `url(${this.state.border})`}} className ="border-image" onClick={this.goToTitlePerson}>
             <h1 className = "p-o-p">People of Promise</h1>
             <h1 className = "intro-name">{this.state.name}</h1>
              <p className ="verse">{this.state.citation}</p>
