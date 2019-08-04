@@ -97,6 +97,13 @@ class App extends Component {
       })
     }
 
+    goToTiles = () => {
+      this.setState({
+        showCalander: false,
+        header: false
+      })
+    }
+
     hideImage = () => {
       this.setState({
         showCalander: false
@@ -111,7 +118,7 @@ render() {
       <div className="App">
         <header className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
-        <Link onClick = {this.goToCalendar} className = "link-options" to = '/tiles'>Calendar</Link>
+        <Link onClick = {this.goToTiles} className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
         <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
         <Link className = "link-options" to = '/timeline'>Timeline</Link>
