@@ -8,6 +8,8 @@ import TitlePerson from '../TitlePerson/TitlePerson'
 import Gallery from '../Gallery/Gallery'
 import GalleryPics from '../GalleryPics/GalleryPics'
 import IntroPerson from '../IntroPerson/IntroPerson'
+import Print from '../Print/Print'
+import Index from '../Index/Index'
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 
 class App extends Component {
@@ -119,12 +121,14 @@ render() {
         <header className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
         <Link onClick = {this.goToTiles} className = "link-options" to = '/tiles'>Calendar</Link>
+        <Link className = "link-options" to = '/titlePerson'>Lesson</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
         <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
         <Link className = "link-options" to = '/timeline'>Timeline</Link>
         <Link className = "link-options" to = '/gallery'>Gallery</Link>
-        <Link className = "link-options" to = '/youth'>Youth</Link>
-        <Link className = "link-options" to = '/addInfo'>Admin Page</Link>
+        <Link className = "link-options" to = '/print'>Print</Link>
+        {/* <Link className = "link-options" to = '/index'>Index</Link> */}
+        {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>
       <Link style={{ textDecoration: 'none', color: 'black' }} to = '/tiles' onClick={this.hideImage}>
       <div className ={this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
@@ -153,6 +157,12 @@ render() {
         />
                 <Route 
         path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}
+        />
+        <Route 
+        path = '/print' render = {() => (<Print/>)}
+        />
+        <Route 
+        path = '/index' render = {() => (<Index/>)}
         />
       </div>
       </Router>

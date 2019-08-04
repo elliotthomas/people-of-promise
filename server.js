@@ -50,6 +50,16 @@ app.get('/api/people', (req, res) => {
   })
     });
 
+    app.post('/api/getImages', (req, res) => {
+      const {date} = {date: req.body.date.date}
+      pool.query ('Select * FROM images as p WHERE p.displaydate = $1', [date], (error, results) => {
+        if(error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+      });
+
   app.post('/api/addPerson', (req, res) => {
     const {name, nickname, title, intro, scripture, citation, prayer, date} = {name: req.body.postPerson.name, nickname: req.body.postPerson.nickname, title: req.body.postPerson.title, intro: req.body.postPerson.intro, scripture: req.body.postPerson.scripture, citation: req.body.postPerson.citation, prayer: req.body.postPerson.prayer, date: req.body.postPerson.date};
 
