@@ -28,6 +28,7 @@
       color: black;
       position: absolute;
       font-size: 19pt;
+      line-height: 1;
   }
   
   .calendar-link:hover {
@@ -36,8 +37,8 @@
   }
   
   .day-1 {
-    top: 12%;
-    left: 6%;
+    top: 11%;
+    left: 5.5%;
   }
   
   .day-2 {
@@ -47,7 +48,7 @@
   
   .day-3 {
     top: 12%;
-    left: 23%;
+    left: 22%;
   }
   
   .day-4 {

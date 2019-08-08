@@ -10,10 +10,10 @@ class Tiles extends Component {
         <div>
         <h1 className= 'tiles-header'>Click on the ‘Stepping Stones’ below to locate this week’s lesson</h1>
         <div className ='tiles cover-image'>
-        <a onClick={this.props.clickLink} data-value = '2019-09-08' href= '#introPerson' className = 'calendar-link day-1'>September 8</a>
-        <a onClick={this.props.clickLink} data-value = '2019-09-15' href= '#introPerson' className = 'calendar-link day-2'>September 15</a>
-        <a onClick={this.props.clickLink} data-value = '2019-09-22' href= '#introPerson' className = 'calendar-link day-3'>September 22</a>
-        <a onClick={this.props.clickLink} data-value = '2019-09-29' href= '#introPerson' className = 'calendar-link day-4'>September 29</a>
+        <a onClick={this.props.clickLink} data-value = '2019-09-08' href= '#introPerson' className = 'calendar-link day-1'>September 8<br />Adam and Eve</a>
+        <a onClick={this.props.clickLink} data-value = '2019-09-15' href= '#introPerson' className = 'calendar-link day-2'>September 15<br />Noah</a>
+        <a onClick={this.props.clickLink} data-value = '2019-09-22' href= '#introPerson' className = 'calendar-link day-3'>September 22<br />Abraham & Sarah</a>
+        <a onClick={this.props.clickLink} data-value = '2019-09-29' href= '#introPerson' className = 'calendar-link day-4'>September 29<br />Hagar & Ishmael</a>
         <a onClick={this.props.clickLink} data-value = '2019-10-06' href= '#introPerson' className = 'calendar-link day-5'>October 6</a>
         <a onClick={this.props.clickLink} data-value = '2019-10-13' href= '#introPerson' className = 'calendar-link day-6'>October 13</a>
         <a onClick={this.props.clickLink} data-value = '2019-10-20' href= '#introPerson' className = 'calendar-link day-7'>October 20</a>
