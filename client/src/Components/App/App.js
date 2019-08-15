@@ -160,7 +160,7 @@ render() {
         path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/familyTree' render = {() => (<FamilyTree date = {this.state.dateToSend}/>)}
+        path = '/familyTree' render = {() => (<FamilyTree name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/print' render = {() => (<Print/>)}
