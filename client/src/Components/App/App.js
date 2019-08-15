@@ -10,6 +10,7 @@ import GalleryPics from '../GalleryPics/GalleryPics'
 import IntroPerson from '../IntroPerson/IntroPerson'
 import Print from '../Print/Print'
 import Index from '../Index/Index'
+import FamilyTree from '../FamilyTree/FamilyTree'
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 
 class App extends Component {
@@ -157,6 +158,9 @@ render() {
         />
                 <Route 
         path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}
+        />
+        <Route 
+        path = '/familyTree' render = {() => (<FamilyTree date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/print' render = {() => (<Print/>)}

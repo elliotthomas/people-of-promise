@@ -1,0 +1,10 @@
+.family-tree-container {
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 0;
+    position: fixed;
+    background-size: 100% 100%!important;
+    cursor: pointer;
+    background-color:rgb(135,206,250)!important;
+}
