@@ -138,7 +138,7 @@ render() {
          path = '/addInfo' render = {() => (<AddInfo />)}
         />
         <Route 
-        path = '/maps' render = {() => (<Maps name = {this.state.nameToSend}/>)}
+        path = '/maps' render = {() => (<Maps name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/timeline' render = {() => (<Timeline name = {this.state.nameToSend}/>)}

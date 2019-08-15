@@ -1,20 +1,30 @@
 .map-container {
-    padding: 2rem 0 0 0;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 0;
+    position: fixed;
+    background-size: 100% 100%!important;
+    cursor: pointer;
+    background-color:rgb(135,206,250)!important;
+    background-image: url("../../images/map-background.png");
 }
 
-
-.map {
-    background-image: url("../../images/map-example.jpg");
-    width: calc(100%/2); 
-    height: 1200px;
+.map-image{
+    margin: 5% auto 0 auto;
+    width: 40%;
+    height: 78%;
+    background-size: 100% 100%!important;
 }
 
+.map-header {
+    font-family: 'chalkdustregular';
+    margin: 0 auto;
+    font-size: 60px;
+}
 
-.cover-image {
-    background-repeat: no-repeat;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+.no-map {
+    font-family: 'chalkdustregular';
+    font-size: 60px;
+    margin-top: 13%;
+}

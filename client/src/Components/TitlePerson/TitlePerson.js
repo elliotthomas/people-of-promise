@@ -45,18 +45,16 @@ class Lesson extends Component {
      })
      
   }
+
   getAllQuestions = async () => {
-    if(!this.state.name){
-      setTimeout(this.getAllQuestions, 500);
-    }
+    // if(!this.state.name){
+    //   setTimeout(this.getAllQuestions, 500);
+    // }
     const response = await fetch('/api/getAllQuestions');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    console.log(body)
     const questionArray = [];
     for(let object of body){
-      console.log("state->", this.state.name)
-      console.log(object.person_name)
       if(object.person_name == this.state.name){
         questionArray.push(object.question)
       } else {
@@ -120,13 +118,6 @@ class Lesson extends Component {
 
     const formattedDate = `${wordMonth} ${day}, ${year}`;
     return formattedDate
-}
-
-getHeight = (element) => {
-  if (element && !this.state.elementHeight) {
-    this.setState({ elementHeight: element.clientHeight });
-  }
-  console.log('client height', this.state.elementHeight)
 }
 
   render() {
