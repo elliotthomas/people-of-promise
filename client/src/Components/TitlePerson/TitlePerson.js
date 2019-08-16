@@ -54,6 +54,7 @@ class Lesson extends Component {
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     const questionArray = [];
+    setTimeout(500);
     for(let object of body){
       if(object.person_name == this.state.name){
         questionArray.push(object.question)
