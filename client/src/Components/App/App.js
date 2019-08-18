@@ -23,7 +23,8 @@ class App extends Component {
     header: false,
     showCalander: true,
     dateToSend: '',
-    nameToSend: ''
+    nameToSend: '',
+    zIndex: 1
   };
 
   getAllPeople = async () => {
@@ -113,6 +114,18 @@ class App extends Component {
       });
     }
 
+    changeZindexShow = () => {
+      this.setState({
+        zIndex: 1
+      });
+    }
+
+    changeZindexHide = () => {
+      this.setState({
+        zIndex: 0
+      });
+    }
+
 
 
 
@@ -122,7 +135,7 @@ render() {
     return (
       <Router>
       <div className="App">
-        <header className={this.state.header ? "App-header" : 'hidden' }>
+        <header style={{ zIndex: `${this.state.zIndex}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
         <Link onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/titlePerson'>Lesson</Link>
@@ -151,7 +164,7 @@ render() {
         path = '/gallery' render = {() => (<Gallery galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}
         />
                 <Route 
-        path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend}/>)}
+        path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend} zIndexShow = {this.changeZindexShow} zIndexHide = {this.changeZindexHide}/>)}
         />
         <Route 
         path = '/introPerson' header = {false} render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}

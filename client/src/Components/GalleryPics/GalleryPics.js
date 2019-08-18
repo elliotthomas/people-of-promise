@@ -23,6 +23,7 @@ class GalleryPics extends Component {
   }
 
   openModal(imageUrl, picObject) {
+    this.props.zIndexHide();
     this.setState({
         modalUrl: imageUrl,
         visible : true,
@@ -35,6 +36,7 @@ closeModal() {
   this.setState({
       visible : false
   });
+  this.props.zIndexShow();
 }
 
   getImages = async () => {
