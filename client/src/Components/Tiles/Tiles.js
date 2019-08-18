@@ -7,7 +7,7 @@ class Tiles extends Component {
   render() {
     console.log('in tiles')
     return (
-        <div>
+        <div className = 'outer-div-tiles'>
         <h1 className= 'tiles-header'>Click on the ‘Stepping Stones’ below to locate this week’s lesson</h1>
         <div className ='tiles cover-image'>
         <a onClick={this.props.clickLink} data-value = '2019-09-08' href= '#introPerson' className = 'calendar-link day-1'>September 8<br />Adam and Eve</a>

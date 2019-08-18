@@ -7,19 +7,21 @@
   margin: 0 auto;
   font-family: Gabriola;
   background-color: rgb(240, 220, 130)!important;
+  margin-top: 50px;
 }
 
 .App-header {
   background-image: url("../../images/menu-bar.png");
-  min-height: 50%;
-  display: block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 50px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
   height: 50px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
   background-size: 100% 100%!important;
+  background-color: rgb(240, 220, 130)!important;
 }
 
 input {

@@ -115,13 +115,16 @@ class App extends Component {
 
 
 
+
+
+
 render() {
     return (
       <Router>
       <div className="App">
         <header className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
-        <Link onClick = {this.goToTiles} className = "link-options" to = '/tiles'>Calendar</Link>
+        <Link onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</Link>
         <Link className = "link-options" to = '/titlePerson'>Lesson</Link>
         <Link className = "link-options" to = '/maps'>Maps</Link>
         <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
@@ -151,7 +154,7 @@ render() {
         path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/introPerson' render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}
+        path = '/introPerson' header = {false} render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/tiles' render = {() => (<Tiles clickLink ={this.clickLink}/>)}
