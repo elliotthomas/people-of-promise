@@ -140,4 +140,77 @@
   left: 2%;
   font-size: 30px;
 }
+
+.modal-image {
+  background-size: 100% 100%!important;
+  margin: 0 auto;
+
+}
+
+.frame-modal {
+  position: absolute;
+  width: 72%;
+  padding-bottom: 48%;
+  background: black;
+  box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.3);
+  left: 15%;
+  top: 4%;
+}
+
+.mat-modal {
+  position: absolute;
+  background: white;
+  top: 3.0303%; bottom: 3.0303%; left: 2.5%; right: 2.5%;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5) inset;
+}
+
+.art-modal {
+  position: absolute;
+  top: 8.129%;
+  bottom: 8.129%;
+  left: 5.158%;
+  right: 5.158%;
+}
+
+.image-modal {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%!important;
+}
+
+.close-modal {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  text-align:center;
+  cursor: pointer;
+  background-size: 100% 100%!important;
+  background-image: url("../../images/exit-icon.png");
+}
+
+.pic-caption {
+  position: absolute;
+  background: white;
+  left: 0;
+  right: 0;
+  bottom: 2%;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5) inset;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pic-title {
+  margin: 0;
+}
+
+.pic-author {
+  margin: 0;
+}
+
+.pic-year {
+  margin: 0;
+}
   
