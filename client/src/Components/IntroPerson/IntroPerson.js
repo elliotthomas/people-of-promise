@@ -50,22 +50,22 @@ class IntroPerson extends Component {
     let headingColor = '';
     switch(border){
       case 1:
-      headingColor = 'green';
+      headingColor = 'rgb(109,167,121)';
       break;
       case 2:
-      headingColor = 'cadetblue';
+      headingColor = 'rgb(87,144,181)';
       break;
       case 3:
-      headingColor = 'orangered';
+      headingColor = 'rgb(234,107,67)';
       break;
       case 4:
-      headingColor = 'deeppink';
+      headingColor = 'rgb(235,45,47)';
       break;
       case 5:
-      headingColor = 'darkblue';
+      headingColor = 'rgb(80,109,170)';
       break;
       case 6:
-      headingColor = 'rebeccapurple';
+      headingColor = 'rgb(142,62,201)';
       break;
       default:
       headingColor = 'black';
