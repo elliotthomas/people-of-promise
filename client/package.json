@@ -12,6 +12,7 @@
     "react-medium-image-zoom": "^3.1.0",
     "react-medium-zoom": "^1.0.0",
     "react-pdf": "^4.1.0",
+    "react-rainbow-text": "^1.0.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "reactstrap": "^7.1.0"

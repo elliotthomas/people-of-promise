@@ -11,6 +11,7 @@ import IntroPerson from '../IntroPerson/IntroPerson'
 import Print from '../Print/Print'
 import Index from '../Index/Index'
 import FamilyTree from '../FamilyTree/FamilyTree'
+import Welcome from '../Welcome/Welcome'
 import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
 
 class App extends Component {
@@ -147,7 +148,7 @@ render() {
         {/* <Link className = "link-options" to = '/index'>Index</Link> */}
         {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>
-      <Link style={{ textDecoration: 'none', color: 'black' }} to = '/tiles' onClick={this.hideImage}>
+      <Link style={{ textDecoration: 'none', color: 'black' }} to = '/welcome' onClick={this.hideImage}>
       <div className ={this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
        </Link>
@@ -179,10 +180,13 @@ render() {
         path = '/familyTree' render = {() => (<FamilyTree name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/print' render = {() => (<Print/>)}
+        path = '/print' render = {() => (<Print name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/index' render = {() => (<Index/>)}
+        />
+        <Route 
+        path = '/welcome' render = {() => (<Welcome/>)}
         />
       </div>
       </Router>

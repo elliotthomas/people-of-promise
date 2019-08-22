@@ -1,40 +1,47 @@
 import React, { Component } from 'react';
-import { Document, Page, Text, View, StyleSheet, PDFViewer } from 'react-pdf';
 import './Print.css';
+import { Document, Page, pdfjs} from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class Print extends Component {
 
+  // state = { numPages: null, pageNumber: 1 };
 
-  render() {
+  // onDocumentLoadSuccess = ({ numPages }) => {
+  //   this.setState({ numPages });
+  // };
 
-    const styles = StyleSheet.create({
-      page: {
-        flexDirection: 'row',
-        backgroundColor: '#E4E4E4'
-      },
-      section: {
-        margin: 10,
-        padding: 10,
-        flexGrow: 1
-      }
-    });
+  // goToPrevPage = () =>
+  //   this.setState(state => ({ pageNumber: state.pageNumber - 1 }));
+  // goToNextPage = () =>
+  //   this.setState(state => ({ pageNumber: state.pageNumber + 1 }));
 
-    return (
-      <PDFViewer>
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-  </PDFViewer>
+ 
+  // render() {
+  //   const { pageNumber, numPages } = this.state;
+  //   const pdfFile = `${this.props.date}-Lesson.pdf`
+  //   return (
+  //     <div>
+  //       <nav>
+  //         <button onClick={this.goToPrevPage}>Prev</button>
+  //         <button onClick={this.goToNextPage}>Next</button>
+  //       </nav>
 
-    );
-  }
+  //       <div style={{ width: 600 }}>
+  //         <Document
+  //           file= {pdfFile}
+  //           onLoadSuccess={this.onDocumentLoadSuccess}
+  //         >
+  //           <Page pageNumber={pageNumber} width={600} />
+  //         </Document>
+  //       </div>
+
+  //       <p>
+  //         Page {pageNumber} of {numPages}
+  //       </p>
+  //     </div>
+  //   );
+  // }
 }
 
 export default Print;
