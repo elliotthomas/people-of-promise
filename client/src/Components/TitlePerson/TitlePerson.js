@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './TitlePerson.css';
 import { Markup } from 'interweave';
+import { Redirect } from 'react-router-dom'
 
 class Lesson extends Component {
   componentWillMount() { 
+    if(!this.props.date){
+      return;
+    }
     this.getOnePerson();
     this.getAllQuestions();
   }
@@ -122,6 +126,10 @@ class Lesson extends Component {
 }
 
   render() {
+    if(!this.props.date){
+      return <Redirect to='/' />
+    }
+
     return (
         <div className= "outer-div">
             <p className = "intro-welcome" >Welcome to this week’s People of Promise! You are invited to dig into the rich resources provided by this online platform. Please explore the menu bar above and check out the tools that will help give context to this week's Lesson. The <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#timeline'>Timeline</a>, the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#familyTree'>Family Tree</a> and <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#maps'>Maps</a> are useful to set the promise in context. Also enter the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#gallery'>Gallery</a> each week and let the various works of art open your eyes to new insights to understand the message of the passage. </p>

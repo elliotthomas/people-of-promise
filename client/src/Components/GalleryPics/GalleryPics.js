@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './GalleryPics.css';
+import { Redirect } from 'react-router-dom'
 import Modal from 'react-awesome-modal';
 
 class GalleryPics extends Component {
+
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
 
   state = {
     image1: '',
@@ -18,12 +24,26 @@ class GalleryPics extends Component {
   };
 
   componentWillMount() {
+    if(!this.props.date){
+      return;
+    }
     this.getImages();
     this.getOnePerson();
   }
 
-  openModal(imageUrl, picObject) {
+  
+
+  openModal(imageUrl, picObject, dimension) {
     this.props.zIndexHide();
+    if(dimension === 1) {
+      this.setState({
+        frameModal: 'frame-modal-long'
+    });
+  } else {
+    this.setState({
+      frameModal: 'frame-modal-wide'
+  });
+  }
     this.setState({
         modalUrl: imageUrl,
         visible : true,
@@ -85,6 +105,11 @@ closeModal() {
       })
     }
   }
+  const node = this.myRef.current
+  console.log('node', node.naturalWidth)
+  node.onload = function (){
+    console.log('node', node.Width)
+  };
  }
 
  getOnePerson = async () => {
@@ -106,26 +131,30 @@ closeModal() {
 }
 
   render() {
+    
+    if(!this.props.date){
+      return <Redirect to='/' />
+    }
 
 
     return (
             <div className ="gallery-background">
             <h1 className = "title-heading-pic">{this.state.name}</h1>
-          <div className="frame-1" onClick={() => this.openModal(this.state.image1, this.state.picRow1)} >
+          <div className="frame-1" onClick={() => this.openModal(this.state.image1, this.state.picRow1, 2)} >
          <div className="mat-1">
           <div className="art-1">
-          <div style = {{backgroundImage: `url(${this.state.image1})`}} className = 'image-1'></div>
+          <img style = {{backgroundImage: `url(${this.state.image1})`}} className = 'image-1' ref={this.myRef}></img>
           </div>
           </div>
           </div>
-          <div className="frame-2" onClick={() => this.openModal(this.state.image2, this.state.picRow2)}>
+          <div className="frame-2" onClick={() => this.openModal(this.state.image2, this.state.picRow2, 2)}>
          <div className="mat-1">
           <div className="art-1">
-          <div style = {{backgroundImage: `url(${this.state.image2})`}} className = 'image-2'></div>
+          <div style = {{backgroundImage: `url(${this.state.image2})`}} className = 'image-2' ></div>
           </div>
           </div>
           </div>
-          <div className="frame-3" onClick={() => this.openModal(this.state.image3, this.state.picRow3)}>
+          <div className="frame-3" onClick={() => this.openModal(this.state.image3, this.state.picRow3, 1)}>
          <div className="mat-1">
           <div className="art-1">
           <div style = {{backgroundImage: `url(${this.state.image3})`}} className = 'image-3'></div>
@@ -137,7 +166,7 @@ closeModal() {
           <Modal visible={this.state.visible} width="1200" height="650" effect="fadeInUp" styles={{ backgroundColor: "rgb(181,90,69)"  }}>
                     <div>
                     <a href="javascript:void(0);" className = 'close-modal' onClick={() => this.closeModal()}></a>
-                        <div className="frame-modal">
+                        <div className={this.state.frameModal}>
                         <div className="mat-modal">
                         <div className="art-modal">
                         <div style = {{backgroundImage: `url(${this.state.modalUrl})`}} className = 'image-modal'></div>

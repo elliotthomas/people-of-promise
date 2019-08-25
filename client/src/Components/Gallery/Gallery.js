@@ -17,6 +17,9 @@ class Gallery extends Component {
     if(this.state.goToPics) {
       return <Redirect to='/galleryPics' />
     }
+    if (performance.navigation.type == 1) {
+      return <Redirect to='/' />
+    }
 
     return (
             <div className ="gallery" onClick={this.goToPics} >

@@ -1,47 +1,18 @@
 import React, { Component } from 'react';
-import './Print.css';
-import { Document, Page, pdfjs} from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import ReactDOM from 'react-dom';
+// import file from ".../../PDF/2019-09-08-Lesson.pdf"
 
 class Print extends Component {
 
-  // state = { numPages: null, pageNumber: 1 };
-
-  // onDocumentLoadSuccess = ({ numPages }) => {
-  //   this.setState({ numPages });
-  // };
-
-  // goToPrevPage = () =>
-  //   this.setState(state => ({ pageNumber: state.pageNumber - 1 }));
-  // goToNextPage = () =>
-  //   this.setState(state => ({ pageNumber: state.pageNumber + 1 }));
 
  
-  // render() {
-  //   const { pageNumber, numPages } = this.state;
-  //   const pdfFile = `${this.props.date}-Lesson.pdf`
-  //   return (
-  //     <div>
-  //       <nav>
-  //         <button onClick={this.goToPrevPage}>Prev</button>
-  //         <button onClick={this.goToNextPage}>Next</button>
-  //       </nav>
-
-  //       <div style={{ width: 600 }}>
-  //         <Document
-  //           file= {pdfFile}
-  //           onLoadSuccess={this.onDocumentLoadSuccess}
-  //         >
-  //           <Page pageNumber={pageNumber} width={600} />
-  //         </Document>
-  //       </div>
-
-  //       <p>
-  //         Page {pageNumber} of {numPages}
-  //       </p>
-  //     </div>
-  //   );
-  // }
+  render() {
+    return (
+      <div>
+{/* <embed src="../../PDF/2019-09-08-Lesson.pdf" width="100%" height="100%"></embed> */}
+      </div>
+    );
+  }
 }
 
 export default Print;

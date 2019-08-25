@@ -4,6 +4,9 @@ import { Redirect } from 'react-router-dom'
 
 class IntroPerson extends Component {
   componentWillMount() { 
+    if(!this.props.date){
+      return;
+    }
     this.getOnePerson();
   }
 
@@ -80,6 +83,9 @@ class IntroPerson extends Component {
   render() {
     if(this.state.goToTitlePerson) {
       return <Redirect to='/titlePerson' />
+    }
+    if(!this.props.date){
+      return <Redirect to='/' />
     }
     return (
             <div className = "background-border">

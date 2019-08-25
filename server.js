@@ -22,6 +22,7 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 app.get('/api/people', (req, res) => {
   pool.query ('Select * FROM people_of_promise as p ORDER BY p.displaydate ASC', (error, results) => {
     if(error) {

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './FamilyTree.css';
+import { Redirect } from 'react-router-dom'
 
 class FamilyTree extends Component {
   componentWillMount() { 
+    if(!this.props.date){
+      return;
+    }
     this.getImageUrl();
   }
 
@@ -39,7 +43,9 @@ class FamilyTree extends Component {
 
 
   render() {
-
+    if(!this.props.date){
+      return <Redirect to='/' />
+    }
     return (
       <div>
         {this.state.showImage && <div style = {{backgroundImage: `url(${this.state.image})`}}  className = "family-tree-container">

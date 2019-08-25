@@ -33,3 +33,30 @@
     font-size: 60px;
     margin-bottom: 30px;
 }
+
+.scroll-welcome{
+background-image: url("../../images/scroll.png");
+width: 100%;
+height: 0;
+padding-bottom: 145%;
+margin: 0 auto;
+margin-top: -75px;
+background-size: 100% 100%!important;
+position: relative;
+}
+
+
+.columns-names {
+    -webkit-column-count: 3;
+    column-count: 3;
+    width: 53%;
+    position: absolute;
+    left: 56.5%;
+    top: 90%;
+    line-height: 1.2;
+    grid-column-gap: 0%;
+    column-gap: 0;
+    column-fill: balance;
+
+    
+}

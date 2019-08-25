@@ -147,13 +147,23 @@
 
 }
 
-.frame-modal {
+.frame-modal-wide {
   position: absolute;
   width: 68%;
   padding-bottom: 44%;
   background: #000;
   box-shadow: 0 10px 7px -5px rgba(0,0,0,.3);
   left: 16%;
+  top: 4%;
+}
+
+.frame-modal-long {
+  position: absolute;
+  width: 36%;
+  padding-bottom: 44%;
+  background: #000;
+  box-shadow: 0 10px 7px -5px rgba(0,0,0,.3);
+  left: 31.5%;
   top: 4%;
 }
 

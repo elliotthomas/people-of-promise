@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './Maps.css';
+import { Redirect } from 'react-router-dom'
 
 class Maps extends Component {
   componentWillMount() { 
+    if(!this.props.date){
+      return;
+    }
     this.getOnePerson();
   }
 
@@ -43,6 +47,9 @@ class Maps extends Component {
 
 
   render() {
+    if(!this.props.date){
+      return <Redirect to='/' />
+    }
 
     return (
         <div className = "map-container">
