@@ -127,6 +127,12 @@ class App extends Component {
       });
     }
 
+    setHeaderToFalse = () => {
+      this.setState({
+        header: false
+      });
+    }
+
 
 
 
@@ -171,7 +177,7 @@ render() {
         path = '/introPerson' header = {false} render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/tiles' render = {() => (<Tiles clickLink ={this.clickLink}/>)}
+        path = '/tiles' render = {() => (<Tiles header = {this.setHeaderToFalse} clickLink ={this.clickLink}/>)}
         />
                 <Route 
         path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}

@@ -163,7 +163,7 @@ closeModal() {
           </div>
           <div className = 'enlarge'>Click on <br /> a Picture <br /> to Enlarge</div>
           <div onClick={e => e.stopPropagation()}>
-          <Modal visible={this.state.visible} width="1200" height="650" effect="fadeInUp" styles={{ backgroundColor: "rgb(181,90,69)"  }}>
+          <Modal visible={this.state.visible} width="1200" height="650" effect="fadeInUp" styles={{ backgroundColor: "rgb(163,20,20)"  }}>
                     <div>
                     <a href="javascript:void(0);" className = 'close-modal' onClick={() => this.closeModal()}></a>
                         <div className={this.state.frameModal}>

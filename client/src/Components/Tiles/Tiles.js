@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './Tiles.css';
 
 class Tiles extends Component {
+  componentWillMount() { 
+    this.props.header();
+    }
 
 
   render() {
-    console.log('in tiles')
     return (
         <div className = 'outer-div-tiles'>
         <h1 className= 'tiles-header'>Click on the ‘Stepping Stones’ below to locate this week’s lesson</h1>
