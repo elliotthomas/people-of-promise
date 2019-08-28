@@ -139,6 +139,9 @@ class App extends Component {
 
 
 render() {
+  window.onpopstate  = (e) => {
+    return <Redirect to='/' />
+ }
     return (
       <Router>
       <div className="App">
@@ -165,7 +168,7 @@ render() {
         path = '/maps' render = {() => (<Maps name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/timeline' render = {() => (<Timeline name = {this.state.nameToSend}/>)}
+        path = '/timeline' render = {() => (<Timeline date = {this.state.dateToSend}/>)}
         />
         <Route 
         path = '/gallery' render = {() => (<Gallery galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}

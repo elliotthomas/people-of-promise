@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import file from ".../../PDF/2019-09-08-Lesson.pdf"
+import './Print.css';
 
 class Print extends Component {
+
+  state = {
+    name: this.props.name
+  }
 
 
  
   render() {
+      const pdfLink = require(`../../PDF/${this.props.date}-Lesson.pdf`);
     return (
-      <div>
-{/* <embed src="../../PDF/2019-09-08-Lesson.pdf" width="100%" height="100%"></embed> */}
+      <div className = 'pdf-link-div'>
+        <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click Here to Open a PDF file of {this.state.name}'s Lesson</a>
       </div>
     );
   }
