@@ -15,6 +15,7 @@ class Gallery extends Component {
 
   render() {
     if(this.state.goToPics) {
+      this.props.changeDarkRed();
       return <Redirect to='/galleryPics' />
     }
     if (performance.navigation.type == 1) {

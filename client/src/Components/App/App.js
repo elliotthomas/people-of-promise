@@ -25,7 +25,8 @@ class App extends Component {
     showCalander: true,
     dateToSend: '',
     nameToSend: '',
-    zIndex: 1
+    zIndex: 1,
+    backgroundColor: ''
   };
 
   getAllPeople = async () => {
@@ -100,6 +101,7 @@ class App extends Component {
         showCalander: true,
         header: false
       })
+      this.changeHeaderColorYellow()
     }
 
     goToTiles = () => {
@@ -107,6 +109,7 @@ class App extends Component {
         showCalander: false,
         header: false
       })
+      this.changeHeaderColorYellow()
     }
 
     hideImage = () => {
@@ -133,6 +136,29 @@ class App extends Component {
       });
     }
 
+    changeHeaderColorGreen = () => {
+      this.setState({
+        backgroundColor: 'rgb(196,206, 185)'
+      });
+    }
+
+    changeHeaderColorYellow = () => {
+      this.setState({
+        backgroundColor: 'rgb(240, 220, 130)'
+      });
+    }
+
+    changeHeaderColorDarkGreen = () => {
+      this.setState({
+        backgroundColor: 'RGB(115,157, 157)'
+      });
+    }
+
+    changeHeaderColorRed = () => {
+      this.setState({
+        backgroundColor: 'RGB(163,20,20)'
+      });
+    }
 
 
 
@@ -145,15 +171,15 @@ render() {
     return (
       <Router>
       <div className="App">
-        <header style={{ zIndex: `${this.state.zIndex}` }} className={this.state.header ? "App-header" : 'hidden' }>
+        <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
         <Link onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</Link>
-        <Link className = "link-options" to = '/titlePerson'>Lesson</Link>
-        <Link className = "link-options" to = '/maps'>Maps</Link>
-        <Link className = "link-options" to = '/familyTree'>Family Tree</Link>
-        <Link className = "link-options" to = '/timeline'>Timeline</Link>
-        <Link className = "link-options" to = '/gallery'>Gallery</Link>
-        <Link className = "link-options" to = '/print'>Print</Link>
+        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/titlePerson'>Lesson</Link>
+        <Link onClick = {this.changeHeaderColorDarkGreen} className = "link-options" to = '/maps'>Maps</Link>
+        <Link onClick = {this.changeHeaderColorGreen} className = "link-options" to = '/familyTree'>Family Tree</Link>
+        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/timeline'>Timeline</Link>
+        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/gallery'>Gallery</Link>
+        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/print'>Print</Link>
         {/* <Link className = "link-options" to = '/index'>Index</Link> */}
         {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>
@@ -171,7 +197,7 @@ render() {
         path = '/timeline' render = {() => (<Timeline date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/gallery' render = {() => (<Gallery galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}
+        path = '/gallery' render = {() => (<Gallery changeDarkRed = {this.changeHeaderColorRed} galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}
         />
                 <Route 
         path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend} zIndexShow = {this.changeZindexShow} zIndexHide = {this.changeZindexHide}/>)}
