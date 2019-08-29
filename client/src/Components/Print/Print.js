@@ -14,7 +14,7 @@ class Print extends Component {
       const pdfLink = require(`../../PDF/${this.props.date}-Lesson.pdf`);
     return (
       <div className = 'pdf-link-div'>
-        <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click For {this.props.name}'s Lesson PDF</a>
+        <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click For {this.props.name}'s Lesson (PDF File)</a>
       </div>
     );
   }
