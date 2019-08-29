@@ -32,8 +32,13 @@ class IntroPerson extends Component {
       });
     const body = await response.json();
     const imageUrl = require(`../../images/border-${body.border}.png`)
+    const name = body.bname
+    if(body.bname == 'Abraham and Sarah')
+    {
+      name = "Abraham\nand Sarah"
+    }
      this.setState({
-       name: body.bname,
+       name: name,
        citation: body.citation,
        borderUrl: imageUrl, 
        border: body.border
