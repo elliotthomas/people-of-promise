@@ -12,46 +12,29 @@ class FamilyTree extends Component {
 
   state = {
     image: '',
-    showImage: true, 
-    name: this.props.name
+    name: this.props.name,
+    familyTree: ''
   }
 
   getImageUrl = () => {
     const date = this.props.date;
-    // if(this.tryRequire(`../../images/ft-${date}.png`) == null)
-    // {
-    //   this.setState({
-    //     showImage: false
-    //   })
-    //   return;
-    // }
     const image = require(`../../images/ft-${date}.png`)
     this.setState({
       image: image
     })
-    
   }
-
-  tryRequire = (path) => {
-    try {
-     return require(`${path}`);
-    } catch (err) {
-     return null;
-    }
-  };
-
 
 
   render() {
     if(!this.props.date){
       return <Redirect to='/' />
     }
+
     return (
       <div>
-        {this.state.showImage && <div style = {{backgroundImage: `url(${this.state.image})`}}  className = "family-tree-container">
-        </div>}
-        {!this.state.showImage && <div>There is no family tree for{this.state.name}</div>}
-      </div>
+        <img src= {this.state.image} className = "family-tree-container">
+        </img>
+        </div>
     );
   }
 }
