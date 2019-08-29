@@ -24,6 +24,8 @@ class Gallery extends Component {
 
     return (
             <div className ="gallery" onClick={this.goToPics} >
+            <div className ='gallery-heading-left'>Click to Enter</div>
+            <div className ='gallery-heading-right'>{this.props.name}'s Gallery</div>
             </div>
     );
   }

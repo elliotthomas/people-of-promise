@@ -160,6 +160,12 @@ class App extends Component {
       });
     }
 
+    setNametoSend = (name) => {
+      this.setState({
+        nameToSend: name
+      });
+    }
+
 
 
 
@@ -197,7 +203,7 @@ render() {
         path = '/timeline' render = {() => (<Timeline date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/gallery' render = {() => (<Gallery changeDarkRed = {this.changeHeaderColorRed} galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend}/>)}
+        path = '/gallery' render = {() => (<Gallery changeDarkRed = {this.changeHeaderColorRed} galleryPics = {this.clickLinkGallery} date = {this.state.dateToSend} name = {this.state.nameToSend}/>)}
         />
                 <Route 
         path = '/galleryPics' render = {() => (<GalleryPics date = {this.state.dateToSend} zIndexShow = {this.changeZindexShow} zIndexHide = {this.changeZindexHide}/>)}
@@ -209,7 +215,7 @@ render() {
         path = '/tiles' render = {() => (<Tiles header = {this.setHeaderToFalse} clickLink ={this.clickLink}/>)}
         />
                 <Route 
-        path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend}/>)}
+        path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend} setName = {this.setNametoSend}/>)}
         />
         <Route 
         path = '/familyTree' render = {() => (<FamilyTree name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}

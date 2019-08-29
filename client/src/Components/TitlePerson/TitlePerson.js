@@ -47,7 +47,7 @@ class Lesson extends Component {
        prayer: body.prayer,
        date: this.formatDate(body.displaydate)
      })
-     
+     this.props.setName(body.bname);
   }
 
   getAllQuestions = async () => {

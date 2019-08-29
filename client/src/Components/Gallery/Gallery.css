@@ -10,4 +10,26 @@
     background-color: rgb(240, 220, 130)!important;
   }
 
+  .gallery-heading-left {
+    text-orientation: upright;
+    color: rgb(109,110,112);
+    font-family: 'chalkdustregular';
+    font-size: 16px;
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 14%;
+    left: 200px;
+  }
+
+  .gallery-heading-right {
+    text-orientation: upright;
+    color: rgb(109,110,112);
+    font-family: 'chalkdustregular';
+    font-size: 16px;
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 6%;
+    right: 168px;
+  }
+
   

@@ -5,10 +5,6 @@ import { Redirect } from 'react-router-dom'
 
 class Print extends Component {
 
-  state = {
-    name: this.props.name
-  }
-
 
  
   render() {
@@ -18,7 +14,7 @@ class Print extends Component {
       const pdfLink = require(`../../PDF/${this.props.date}-Lesson.pdf`);
     return (
       <div className = 'pdf-link-div'>
-        <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click Here to Open a PDF file of {this.props.name}'s Lesson</a>
+        <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click For {this.props.name}'s Lesson PDF</a>
       </div>
     );
   }
