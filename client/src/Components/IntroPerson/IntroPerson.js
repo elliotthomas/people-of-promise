@@ -32,7 +32,7 @@ class IntroPerson extends Component {
       });
     const body = await response.json();
     const imageUrl = require(`../../images/border-${body.border}.png`)
-    const name = body.bname
+    let name = body.bname
     if(body.bname == 'Abraham and Sarah')
     {
       name = "Abraham\nand Sarah"
