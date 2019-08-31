@@ -46,31 +46,32 @@
     max-width: 1200px;
     margin: 0 auto;
     background-color: rgb(240, 220, 130)!important;
+    height: 1600px;
 }
 
 .columns {
-    -webkit-column-count: 2;
     column-count: 2;
-    width: 75%;
-    position: absolute;
-    left: 12%;
-    top: 16%;
+    width: 88%;
     line-height: 1.2;
-    column-gap: 13%;
+    grid-column-gap: 13%;
+    -webkit-column-gap: 13%;
+    column-gap: 11%;
+    -webkit-column-fill: balance;
     column-fill: balance;
-
+    font-size: 14pt;
+    padding-top: 17%;
+    padding-left: 13%;
     
 }
 
 .scroll {
     background-image: url("../../images/scroll.png");
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    margin: 0 auto;
-    margin-top: -75px;
+    height: auto;
+    margin: -75px auto 0;
     background-size: 100% 100%!important;
     position: relative;
+    padding-bottom: 20%;
 }
 
 
