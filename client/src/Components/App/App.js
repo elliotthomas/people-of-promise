@@ -83,7 +83,7 @@ class App extends Component {
       clickLink = (event) => {
         this.setState({
           dateToSend: event.currentTarget.getAttribute('data-value'),
-          header: true,
+          header: false,
           showCalander: false
         })
     }
@@ -136,6 +136,13 @@ class App extends Component {
       });
     }
 
+
+    setHeaderToTrue = () => {
+      this.setState({
+        header: true
+      });
+    }
+
     changeHeaderColorGreen = () => {
       this.setState({
         backgroundColor: 'rgb(196,206, 185)'
@@ -180,7 +187,7 @@ render() {
         <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
         <Link onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</Link>
-        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/titlePerson'>Lesson</Link>
+        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/lesson'>Lesson</Link>
         <Link onClick = {this.changeHeaderColorDarkGreen} className = "link-options" to = '/maps'>Maps</Link>
         <Link onClick = {this.changeHeaderColorGreen} className = "link-options" to = '/familyTree'>Family Tree</Link>
         <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/timeline'>Timeline</Link>
@@ -215,7 +222,7 @@ render() {
         path = '/tiles' render = {() => (<Tiles header = {this.setHeaderToFalse} clickLink ={this.clickLink}/>)}
         />
                 <Route 
-        path = '/titlePerson' render = {() => (<TitlePerson clickLink ={this.clickLinkName} date = {this.state.dateToSend} setName = {this.setNametoSend}/>)}
+        path = '/lesson' render = {() => (<TitlePerson showHeader = {this.setHeaderToTrue} clickLink ={this.clickLinkName} date = {this.state.dateToSend} setName = {this.setNametoSend}/>)}
         />
         <Route 
         path = '/familyTree' render = {() => (<FamilyTree name = {this.state.nameToSend} date = {this.state.dateToSend}/>)}

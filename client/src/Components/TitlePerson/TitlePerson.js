@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './TitlePerson.css';
 import { Markup } from 'interweave';
 import { Redirect } from 'react-router-dom'
+import { Controller, animated } from 'react-spring/renderprops';
 
 class Lesson extends Component {
   componentWillMount() { 
@@ -10,6 +11,7 @@ class Lesson extends Component {
     }
     this.getOnePerson();
     this.getAllQuestions();
+    this.props.showHeader();
   }
 
   state = {
@@ -58,7 +60,6 @@ class Lesson extends Component {
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
     const questionArray = [];
-    setTimeout(1000);
     for(let object of body){
       if(object.person_name == this.state.name){
         questionArray.push(object.question)
@@ -70,7 +71,9 @@ class Lesson extends Component {
     this.setState({
       questions: questions
     });
-    console.log(this.state.questions);
+    if(!this.state.questions) {
+      this.getAllQuestions(); 
+    }
   };
 
   formatDate = (date) => {
@@ -125,13 +128,20 @@ class Lesson extends Component {
     return formattedDate
 }
 
+animations = new Controller({
+  opacity: 0
+})
+
   render() {
     if(!this.props.date){
       return <Redirect to='/' />
     }
 
+    const props = this.animations.update({opacity: 1})
+
+
     return (
-        <div className= "outer-div">
+        <animated.div className= "outer-div" style = {props}>
             <p className = "intro-welcome" >Welcome to this week’s People of Promise! You are invited to dig into the rich resources provided by this online platform. Please explore the menu bar above and check out the tools that will help give context to this week's Lesson. The <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#timeline'>Timeline</a>, the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#familyTree'>Family Tree</a> and <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#maps'>Maps</a> are useful to set the promise in context. Also enter the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#gallery'>Gallery</a> each week and let the various works of art open your eyes to new insights to understand the message of the passage. </p>
             <h1 className = "title-heading">{this.state.name}</h1>
             <h3 className = "date-text">Week of {this.state.date}</h3>
@@ -150,7 +160,7 @@ class Lesson extends Component {
             <p className ="prayer">{this.state.prayer}</p>
             </div>
             </div>
-        </div>
+        </animated.div>
     );
   }
 }

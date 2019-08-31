@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './IntroPerson.css';
 import { Redirect } from 'react-router-dom'
-
+import { Controller, animated } from 'react-spring/renderprops';
+ 
 class IntroPerson extends Component {
   componentWillMount() { 
     if(!this.props.date){
@@ -10,12 +11,17 @@ class IntroPerson extends Component {
     this.getOnePerson();
   }
 
+  componentDidMount () {
+    setInterval(() => this.setState({ goToLesson: true}), 3000)
+  }
+
   state = {
     name: '',
     citation: '',
     borderUrl: '',
     border: '',
-    goToTitlePerson: false
+    goToTitlePerson: false,
+    goToLesson: false
   };
 
   getOnePerson = async () => {
@@ -85,21 +91,29 @@ class IntroPerson extends Component {
     
   }
 
+  animations = new Controller({opacity: 0})
+
+
   render() {
     if(this.state.goToTitlePerson) {
-      return <Redirect to='/titlePerson' />
+      return <Redirect to='/lesson' />
+    }
+    if(this.state.goToLesson) {
+      return <Redirect to='/lesson' />
     }
     if(!this.props.date){
       return <Redirect to='/' />
     }
+    const props = this.animations.update({opacity: 1})
+
     return (
-            <div className = "background-border">
-            <div style = {{backgroundImage: `url(${this.state.borderUrl})`}} className ="border-image" onClick={this.goToTitlePerson}>
+            <animated.div className = "background-border" style ={props}>
+            <div style = {{backgroundImage: `url(${this.state.borderUrl})`}} className ="border-image" >
             <h1 className = "p-o-p" style = {{color: `${this.state.headingColor}`}}>People of Promise</h1>
             <h1 className = "intro-name">{this.state.name}</h1>
              <p className ="verse">{this.state.citation}</p>
             </div>
-            </div>
+            </animated.div>
     );
   }
 }

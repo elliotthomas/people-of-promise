@@ -11,7 +11,13 @@ class Print extends Component {
     if(!this.props.date){
       return <Redirect to='/' />
     }
+    function openInNewTab(url) {
+      var win = window.open(url, '_blank');
+      win.focus();
+    }
       const pdfLink = require(`../../PDF/${this.props.date}-Lesson.pdf`);
+      openInNewTab(pdfLink);
+      return <Redirect to='/lesson' />;
     return (
       <div className = 'pdf-link-div'>
         <a  target="_blank" className = 'pdf-link' href={pdfLink}>Click For {this.props.name}'s Lesson (PDF File)</a>
