@@ -26,6 +26,7 @@ class Lesson extends Component {
     date: ''
   }
 
+
   getOnePerson = async () => {
     console.log('in get one person', this.props.date)
     const dateObject = {
@@ -53,9 +54,6 @@ class Lesson extends Component {
   }
 
   getAllQuestions = async () => {
-    // if(!this.state.name){
-    //   setTimeout(this.getAllQuestions, 500);
-    // }
     const response = await fetch('/api/getAllQuestions');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
@@ -71,9 +69,6 @@ class Lesson extends Component {
     this.setState({
       questions: questions
     });
-    if(!this.state.questions) {
-      this.getAllQuestions(); 
-    }
   };
 
   formatDate = (date) => {
@@ -136,8 +131,16 @@ animations = new Controller({
     if(!this.props.date){
       return <Redirect to='/' />
     }
+    if(this.state.goToLesson) {
+      return <Redirect to='/lesson' />
+    }
+
+    if(!this.state.questions) {
+      return <div />
+    }
 
     const props = this.animations.update({opacity: 1})
+
 
 
     return (

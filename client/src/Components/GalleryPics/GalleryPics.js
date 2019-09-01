@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './GalleryPics.css';
 import { Redirect } from 'react-router-dom'
 import Modal from 'react-awesome-modal';
+import { Controller, animated } from 'react-spring/renderprops';
 
 class GalleryPics extends Component {
 
@@ -31,9 +32,11 @@ class GalleryPics extends Component {
     this.getOnePerson();
   }
 
-  
+  animations = new Controller({
+    opacity: 0
+  })
 
-  openModal(imageUrl, picObject, dimension) {
+openModal(imageUrl, picObject, dimension) {
     this.props.zIndexHide();
     if(dimension === 1) {
       this.setState({
@@ -136,9 +139,11 @@ closeModal() {
       return <Redirect to='/' />
     }
 
+    const props = this.animations.update({opacity: 1})
+
 
     return (
-            <div className ="gallery-background">
+            <animated.div className ="gallery-background" style={props}>
             <h1 className = "title-heading-pic">{this.state.name}</h1>
           <div className="frame-1" onClick={() => this.openModal(this.state.image1, this.state.picRow1, 2)} >
          <div className="mat-1">
@@ -181,7 +186,7 @@ closeModal() {
                     </div>
             </Modal>
             </div>
-          </div>
+          </animated.div>
           
     );
   }

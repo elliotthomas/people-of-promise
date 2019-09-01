@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
 import './Gallery.css';
 import { Redirect } from 'react-router-dom'
+import { Controller, animated } from 'react-spring/renderprops';
 
 class Gallery extends Component {
   state = {
     goToPics: false
   };
 
-  goToPics = () => {
-    this.setState({
-      goToPics: true
-    })
+  animations = new Controller({
+    opacity: 0
+  })
+
+  componentDidMount () {
+    setInterval(() => this.setState({ goToPics: true}), 2000)
   }
+
+  
 
   render() {
     if(this.state.goToPics) {
-      this.props.changeDarkRed();
       return <Redirect to='/galleryPics' />
     }
     if (performance.navigation.type == 1) {
       return <Redirect to='/' />
     }
 
+
+    const props = this.animations.update({opacity: 1})
+
     return (
-            <div className ="gallery" onClick={this.goToPics} >
-            <div className ='gallery-heading-left'>Click to Enter</div>
-            <div className ='gallery-heading-right'>{this.props.name}'s Gallery</div>
-            </div>
+            <animated.div className ="gallery" style = {props}>
+            </animated.div>
     );
   }
 }

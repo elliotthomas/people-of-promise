@@ -12,7 +12,7 @@ class IntroPerson extends Component {
   }
 
   componentDidMount () {
-    setInterval(() => this.setState({ goToLesson: true}), 3000)
+    setInterval(() => this.setState({ goToLesson: true}), 2000)
   }
 
   state = {
