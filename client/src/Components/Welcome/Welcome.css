@@ -47,16 +47,27 @@ position: relative;
 
 
 .columns-names {
-    -webkit-column-count: 3;
     column-count: 3;
-    width: 53%;
+    width: 39%;
     position: absolute;
-    left: 56.5%;
-    top: 90%;
+    left: 54.5%;
+    top: 66%;
     line-height: 1.2;
-    grid-column-gap: 0%;
+    grid-column-gap: 0;
     column-gap: 0;
     column-fill: balance;
 
     
+}
+
+.columns-welcome {
+column-count: 2;
+width: 88%;
+line-height: 1.2;
+grid-column-gap: 13%;
+column-gap: 11%;
+column-fill: balance;
+font-size: 14pt;
+padding-top: 23%;
+padding-left: 13%;
 }
