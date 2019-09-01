@@ -59,8 +59,8 @@
     column-gap: 11%;
     -webkit-column-fill: balance;
     column-fill: balance;
-    font-size: 14pt;
-    padding-top: 16%;
+    font-size: 16pt;
+    padding-top: 20%;
     padding-left: 13%;
     
 }
@@ -69,7 +69,7 @@
     background-image: url("../../images/scroll.png");
     width: 100%;
     height: auto;
-    margin: -55px auto 0;
+    margin: -65px auto 0;
     background-size: 100% 100%!important;
     position: relative;
     padding-bottom: 20%;
