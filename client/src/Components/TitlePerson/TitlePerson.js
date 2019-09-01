@@ -67,7 +67,7 @@ class Lesson extends Component {
         continue;
       }
     }
-    const questions = questionArray.map(question => <li key = {question} value = {question}>{question}</li>);
+    const questions = questionArray.map(question => <li className = 'question-list' key = {question} value = {question}>{question}</li>);
     this.setState({
       questions: questions
     });
@@ -146,7 +146,7 @@ animations = new Controller({
             <h1 className = "title-heading">{this.state.name}</h1>
             <h3 className = "date-text">Week of {this.state.date}</h3>
             <div className ="scroll cover-image">
-            <div ref={this.getHeight} className ="columns">
+            <div className ="columns">
             <h4 className = "text-heading">Introduction</h4>
             <p className = "lesson-intro"><Markup content= {this.state.intro}/></p>
             <h4 className = "text-heading">Scripture</h4>

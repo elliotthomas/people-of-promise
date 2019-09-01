@@ -12,6 +12,7 @@
 
 .lesson-intro {
     text-align: left;
+    margin-bottom: 0;
 }
 
 .lesson-text {
@@ -82,4 +83,8 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  .question-list {
+      margin-bottom: 15px;
   }
