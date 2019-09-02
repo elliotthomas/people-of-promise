@@ -11,9 +11,9 @@ class IntroPerson extends Component {
     this.getOnePerson();
   }
 
-  // componentDidMount () {
-  //   setInterval(() => this.setState({ goToLesson: true}), 2000)
-  // }
+  componentDidMount () {
+    setInterval(() => this.setState({ goToLesson: true}), 2000)
+  }
 
   state = {
     name: '',
