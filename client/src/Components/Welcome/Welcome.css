@@ -1,7 +1,7 @@
 
 .outer-div-welcome {
     max-width: 100%;
-    height: 2200px;
+    height: 1750px;
     margin: 0 auto;
     background-color: rgb(240, 220, 130)!important;
     cursor: pointer;
@@ -38,7 +38,7 @@
 background-image: url("../../images/scroll.png");
 width: 100%;
 height: 0;
-padding-bottom: 145%;
+padding-bottom: 131%;
 margin: 0 auto;
 margin-top: -75px;
 background-size: 100% 100%!important;
