@@ -33,12 +33,12 @@ class Timeline extends Component {
       });
     const body = await response.json();
 
-    const showTimelineCara = null;
+    let showTimelineCara = null;
 
     if(body.timeline === 7) {
-      const showTimelineCara = false;
+      showTimelineCara = false;
     } else {
-      const showTimelineCara = true;
+     showTimelineCara = true;
     }
 
     const imageUrl = require(`../../images/timeline-${body.timeline}.png`)
