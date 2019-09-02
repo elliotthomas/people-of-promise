@@ -184,6 +184,7 @@ render() {
     return (
       <Router>
       <div className="App">
+        {/* <h1 className = 'current-name'>{this.state.nameToSend}</h1> */}
         <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <NavLink onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</NavLink>
         <NavLink activeClassName = 'active-link' onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</NavLink>
