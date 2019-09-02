@@ -26,8 +26,9 @@
 .current-name {
   background-color: rgb(240, 220, 130);
   font-family: 'chalkdustregular';
-  font-size: 16pt;
+  font-size: 14pt;
   text-align:center;
+  height: 25px;
 }
 
 input {

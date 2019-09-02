@@ -149,8 +149,6 @@ animations = new Controller({
     return (
         <animated.div className= "outer-div" style = {props}>
             <p className = "intro-welcome" >Welcome to this week’s People of Promise! You are invited to dig into the rich resources provided by this online platform. Please explore the menu bar above and check out the tools that will help give context to this week's Lesson. The <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#timeline'>Timeline</a>, the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#familyTree'>Family Tree</a> and <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#maps'>Maps</a> are useful to set the promise in context. Also enter the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#gallery'>Gallery</a> each week and let the various works of art open your eyes to new insights to understand the message of the passage. </p>
-            <h1 className = "title-heading">{this.state.name}</h1>
-            <h3 className = "date-text">Week of {this.state.date}</h3>
             <div className ="scroll cover-image">
             <div className ="columns">
             <h4 className = "text-heading">Introduction</h4>

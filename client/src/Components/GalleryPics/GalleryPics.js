@@ -144,7 +144,6 @@ closeModal() {
 
     return (
             <animated.div className ="gallery-background" style={props}>
-            <h1 className = "title-heading-pic">{this.state.name}</h1>
           <div className="frame-1" onClick={() => this.openModal(this.state.image1, this.state.picRow1, 2)} >
          <div className="mat-1">
           <div className="art-1">

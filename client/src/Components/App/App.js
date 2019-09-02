@@ -26,7 +26,8 @@ class App extends Component {
     dateToSend: '',
     nameToSend: '',
     zIndex: 1,
-    backgroundColor: ''
+    backgroundColor: '',
+    showDate: ''
   };
 
   getAllPeople = async () => {
@@ -84,8 +85,10 @@ class App extends Component {
         this.setState({
           dateToSend: event.currentTarget.getAttribute('data-value'),
           header: false,
-          showCalander: false
+          showCalander: false,
+          showDate: this.formatDate(event.currentTarget.getAttribute('data-value'))
         })
+
     }
 
     clickLinkName = (event) => {
@@ -173,6 +176,57 @@ class App extends Component {
       });
     }
 
+    formatDate = (date) => {
+      let wordMonth = '';
+      const day = date.slice(8,10);
+      const year = date.slice(0,4);
+      const month = date.slice(5,7);
+      switch(month){
+        case '01':
+        wordMonth = 'January';
+        break;
+        case '02':
+        wordMonth = 'February';
+        break;
+        case '03':
+        wordMonth = 'March';
+        break;
+        case '04':
+        wordMonth = 'April';
+        break;
+        case '05':
+        wordMonth = 'May';
+        break;
+        case '06':
+        wordMonth = 'June';
+        break;
+        case '07':
+        wordMonth = 'July';
+        break;
+        case '08':
+        wordMonth = 'August';
+        break;
+        case '09':
+        wordMonth = 'September';
+        break;
+        case '10':
+        wordMonth = 'October';
+        break;
+        case '11':
+        wordMonth = 'November';
+        break;
+        case '12':
+        wordMonth = 'December';
+        break;
+        default:
+        wordMonth = 'Month';
+        break;
+      }
+  
+      const formattedDate = `${wordMonth} ${day}, ${year}`;
+      return formattedDate
+  }
+
 
 
 
@@ -184,7 +238,6 @@ render() {
     return (
       <Router>
       <div className="App">
-        {/* <h1 className = 'current-name'>{this.state.nameToSend}</h1> */}
         <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <NavLink onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</NavLink>
         <NavLink activeClassName = 'active-link' onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</NavLink>
@@ -197,6 +250,7 @@ render() {
         {/* <Link className = "link-options" to = '/index'>Index</Link> */}
         {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>
+        <h1 className = {this.state.header ? "current-name" : 'hidden' }>{this.state.nameToSend} - Week of {this.state.showDate}</h1>
       <Link style={{ textDecoration: 'none', color: 'black' }} to = '/welcome' onClick={this.hideImage}>
       <div className ={this.state.showCalander ? 'welcome-image contain-image' : "hidden"}>
        </div>
