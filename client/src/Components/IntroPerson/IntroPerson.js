@@ -25,7 +25,7 @@ class IntroPerson extends Component {
   };
 
   getOnePerson = async () => {
-    console.log('in get one person', this.props.date)
+    // console.log('in get one person', this.props.date)
     const dateObject = {
       date: this.props.date
     };
@@ -60,7 +60,7 @@ class IntroPerson extends Component {
 
   changeHeadingColor = () => {
     let border = this.state.border
-    console.log("border->", this.state.border)
+    // console.log("border->", this.state.border)
     let headingColor = '';
     switch(border){
       case 1:

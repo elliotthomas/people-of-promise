@@ -68,7 +68,7 @@ class App extends Component {
         body: JSON.stringify({ postUser: objectToSend }),
       });
       const body = await response.text();
-      console.log(typeof body)
+      // console.log(typeof body)
       if(body === 'true') {
         this.setState({
           auth: true,
@@ -240,7 +240,7 @@ render() {
       <div className="App">
         <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
         <NavLink onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</NavLink>
-        <NavLink activeClassName = 'active-link' onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.goToTiles}  className = "link-options" to = '/steppingStones'>Calendar</NavLink>
         <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/lesson'>Lesson</NavLink>
         <NavLink activeClassName = 'active-link' className = "link-options" to = '/maps'>Maps</NavLink>
         <NavLink activeClassName = 'active-link' className = "link-options" to = '/familyTree'>Family Tree</NavLink>
@@ -274,7 +274,7 @@ render() {
         path = '/introPerson' header = {false} render = {() => (<IntroPerson date = {this.state.dateToSend}/>)}
         />
         <Route 
-        path = '/tiles' render = {() => (<Tiles header = {this.setHeaderToFalse} clickLink ={this.clickLink}/>)}
+        path = '/steppingStones' render = {() => (<Tiles header = {this.setHeaderToFalse} clickLink ={this.clickLink}/>)}
         />
                 <Route 
         path = '/lesson' render = {() => (<TitlePerson showHeader = {this.setHeaderToTrue} clickLink ={this.clickLinkName} date = {this.state.dateToSend} setName = {this.setNametoSend}/>)}

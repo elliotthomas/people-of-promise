@@ -30,7 +30,7 @@ class AddInfo extends Component {
     const response = await fetch('/api/people');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    console.log('body from info ->', body)
+    // console.log('body from info ->', body)
     const dates = this.getDateArray(body).dateArray.map(date => <option key = {date} value = {date}>{date}</option>);
     const namesForDel = this.getDateArray(body).namesDone.map(object => <option key = {object.name} value = {object.name}>{object.name}</option>);
     const objectNameDate = this.getDateArray(body).namesDone.map(object => <li key = {object.date}>{object.name} - {object.date}</li>);
@@ -39,7 +39,7 @@ class AddInfo extends Component {
       namesDone: objectNameDate,
       namesForDel: namesForDel
   })
-    console.log(this.state.dateArray)
+    // console.log(this.state.dateArray)
   };
 
   getDateArray = (array) => {
@@ -130,12 +130,12 @@ selectDate = (event) => {
 }
 
 selectNameToDelete = (event) => {
-  console.log('in select name to del')
+  // console.log('in select name to del')
   const name = event.currentTarget.value
   this.setState({
     nameDel: name
   })
-  console.log('in select', this.state.nameDel)
+  // console.log('in select', this.state.nameDel)
 }
 
 selectQuestionToAdd = (event) => {
@@ -172,7 +172,7 @@ this.getAllPeople();
 handleDeletePerson = async event => {
   event.preventDefault();
   const name = this.state.nameDel;
-  console.log('name ->',name)
+  // console.log('name ->',name)
   const response = await fetch('/api/deletePerson', {
     method: 'POST',
     headers: {

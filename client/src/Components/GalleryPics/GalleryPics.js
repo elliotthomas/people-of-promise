@@ -66,7 +66,7 @@ closeModal() {
     const dateObject = {
       date: this.props.date
     };
-    console.log('date', this.props.date)
+    // console.log('date', this.props.date)
       const response = await fetch('/api/getImages', {
         method: 'POST',
         headers: {
@@ -76,12 +76,12 @@ closeModal() {
       });
     const body = await response.json();
 
-    console.log('response from api', body)
+    // console.log('response from api', body)
 
     for(let row of body) {
     if(row.picnum == 1) {
       const date = row.displaydate.slice(0, 10);
-      console.log('date in for', date)
+      // console.log('date in for', date)
       const imageUrl1 = require(`../../images/${date}-${row.picnum}.jpg`)
       const picRow1 = row
       this.setState({
@@ -109,9 +109,9 @@ closeModal() {
     }
   }
   const node = this.myRef.current
-  console.log('node', node.naturalWidth)
+  // console.log('node', node.naturalWidth)
   node.onload = function (){
-    console.log('node', node.Width)
+    // console.log('node', node.Width)
   };
  }
 

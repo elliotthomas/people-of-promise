@@ -27,7 +27,7 @@ class Lesson extends Component {
 
 
   getOnePerson = async () => {
-    console.log('in get one person', this.props.date)
+    // console.log('in get one person', this.props.date)
     const dateObject = {
       date: this.props.date
     };
@@ -57,7 +57,7 @@ class Lesson extends Component {
     const nameObject = {
       name: name
     };
-    console.log('in get all questions')
+    // console.log('in get all questions')
       const response = await fetch('/api/onePersonQuestions', {
         method: 'POST',
         headers: {
@@ -66,7 +66,7 @@ class Lesson extends Component {
         body: JSON.stringify({ name: nameObject }),
       });
     const body = await response.json();
-    console.log('this is the body', body)
+    // console.log('this is the body', body)
     const questionArray = body;
     const questions = questionArray.map(question => <li className = 'question-list' key = {question.question} value = {question.question}>{question.question}</li>);
     this.setState({
