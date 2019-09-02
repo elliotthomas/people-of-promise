@@ -53,7 +53,6 @@ class Maps extends Component {
 
     return (
         <div className = "map-container">
-          {this.state.showImage && <h1 className = 'map-header'>{this.state.name}</h1>}
           {this.state.showImage && <div style = {{backgroundImage: `url(${this.state.imageUrl})`}} className = 'map-image'>
           </div>}
           {!this.state.showImage && <div className = 'no-map'>There is no map for {this.state.name}</div>}
