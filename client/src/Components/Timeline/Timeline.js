@@ -14,7 +14,9 @@ class Timeline extends Component {
   state = {
     name: '',
     imageUrl: '',
-    showImage: true
+    currentTimeline: '',
+    showImage: true,
+    showTimelineCara: true
   }
 
   getOnePerson = async () => {
@@ -31,11 +33,55 @@ class Timeline extends Component {
       });
     const body = await response.json();
 
+    const showTimelineCara = null;
+
+    if(body.timeline === 7) {
+      const showTimelineCara = false;
+    } else {
+      const showTimelineCara = true;
+    }
+
     const imageUrl = require(`../../images/timeline-${body.timeline}.png`)
      this.setState({
-       imageUrl: imageUrl
+       currentTimeline: body.timeline,
+       imageUrl: imageUrl,
+       showTimelineCara: showTimelineCara
      })
   }
+
+  backOne = () => {
+    let current = this.state.currentTimeline
+
+    if(current === 1) {
+      current = 6
+    } else {
+      current = current - 1;
+    }
+
+    const imageUrl = require(`../../images/timeline-${current}.png`)
+    this.setState({
+      currentTimeline: current,
+      imageUrl: imageUrl
+    })
+  }
+
+
+  forwardOne = () => {
+    let current = this.state.currentTimeline
+
+    if(current === 6) {
+      current = 1
+    } else {
+      current = current + 1;
+    }
+
+    const imageUrl = require(`../../images/timeline-${current}.png`)
+    this.setState({
+      currentTimeline: current,
+      imageUrl: imageUrl
+    })
+  }
+
   render() {
     if(!this.props.date){
       return <Redirect to='/' />
@@ -43,6 +89,11 @@ class Timeline extends Component {
 
     return (
         <div style = {{backgroundImage: `url(${this.state.imageUrl})`}}  className = "timeline-container">
+        {this.state.showTimelineCara && <div className = 'arrow-container'>
+        <div className = 'arrow-left' onClick = {this.backOne}></div>
+        <h1 className = 'timeline-header'>Timeline {this.state.currentTimeline}/6</h1>
+        <div className = 'arrow-right' onClick = {this.forwardOne}></div>
+        </div>}
         </div>
     );
   }

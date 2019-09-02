@@ -9,3 +9,31 @@
     background-color: rgb(240, 220, 130)!important;
     z-index: -1;
 }
+
+.arrow-container {
+    margin-top: 80px;
+}
+
+.arrow-left {
+    display:inline-block;
+    background-image: url("../../images/arrow-left.png");
+    background-size: 100% 100%!important;
+    height: 20px;
+    width: 20px;
+
+}
+
+.arrow-right {
+    display:inline-block;
+    background-image: url("../../images/arrow-right.png");
+    background-size: 100% 100%!important;
+    height: 20px;
+    width: 20px;
+
+}
+
+.timeline-header {
+    font-family: 'chalkdustregular';
+    font-size: 30px;
+    display:inline-block;
+}
