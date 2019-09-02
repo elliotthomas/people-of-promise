@@ -10,7 +10,6 @@ class Lesson extends Component {
       return;
     }
     this.getOnePerson();
-    this.getAllQuestions();
     this.props.showHeader();
   }
 
@@ -51,21 +50,25 @@ class Lesson extends Component {
        date: this.formatDate(body.displaydate)
      })
      this.props.setName(body.bname);
+     this.getAllQuestions(body.bname)
   }
 
-  getAllQuestions = async () => {
-    const response = await fetch('/api/getAllQuestions');
+  getAllQuestions = async (name) => {
+    const nameObject = {
+      name: name
+    };
+    console.log('in get all questions')
+      const response = await fetch('/api/onePersonQuestions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: nameObject }),
+      });
     const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    const questionArray = [];
-    for(let object of body){
-      if(object.person_name == this.state.name){
-        questionArray.push(object.question)
-      } else {
-        continue;
-      }
-    }
-    const questions = questionArray.map(question => <li className = 'question-list' key = {question} value = {question}>{question}</li>);
+    console.log('this is the body', body)
+    const questionArray = body;
+    const questions = questionArray.map(question => <li className = 'question-list' key = {question.question} value = {question.question}>{question.question}</li>);
     this.setState({
       questions: questions
     });

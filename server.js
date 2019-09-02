@@ -51,6 +51,16 @@ app.get('/api/people', (req, res) => {
   })
     });
 
+    app.post('/api/onePersonQuestions', (req, res) => {
+      const {name} = {name: req.body.name.name}
+      pool.query ('SELECT question FROM questions q WHERE q.person_name = $1', [name], (error, results) => {
+        if(error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    })
+      });
+
     app.post('/api/getImages', (req, res) => {
       const {date} = {date: req.body.date.date}
       pool.query ('Select * FROM images as p WHERE p.displaydate = $1', [date], (error, results) => {
