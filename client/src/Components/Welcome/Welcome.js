@@ -16,7 +16,7 @@ class Welcome extends Component {
 
   render() {
     if(this.state.tiles) {
-      return <Redirect to='/tiles' />
+      return <Redirect to='/steppingStones' />
     }
 
     if (performance.navigation.type == 1) {
