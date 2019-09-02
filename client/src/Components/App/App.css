@@ -49,10 +49,14 @@ input {
 
 .active-link:before {
   content: '\271D';
+  zoom: .7;
+  margin-right:10px
 }
 
 .active-link:after {
   content: '\271D';
+  zoom: .7;
+  margin-left: 10px;
 }
 
 
