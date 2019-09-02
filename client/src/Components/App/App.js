@@ -12,7 +12,7 @@ import Print from '../Print/Print'
 import Index from '../Index/Index'
 import FamilyTree from '../FamilyTree/FamilyTree'
 import Welcome from '../Welcome/Welcome'
-import { HashRouter as Router, Link, Route, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Link, Route, Redirect, NavLink } from 'react-router-dom'
 
 class App extends Component {
 
@@ -185,14 +185,14 @@ render() {
       <Router>
       <div className="App">
         <header style={{ zIndex: `${this.state.zIndex}`, backgroundColor: `${this.state.backgroundColor}` }} className={this.state.header ? "App-header" : 'hidden' }>
-        <Link onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</Link>
-        <Link onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</Link>
-        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/lesson'>Lesson</Link>
-        <Link onClick = {this.changeHeaderColorDarkGreen} className = "link-options" to = '/maps'>Maps</Link>
-        <Link onClick = {this.changeHeaderColorGreen} className = "link-options" to = '/familyTree'>Family Tree</Link>
-        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/timeline'>Timeline</Link>
-        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/gallery'>Gallery</Link>
-        <Link onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/print'>Print</Link>
+        <NavLink onClick = {this.goToCalendar} className = "link-options" to = '/'>Home</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.goToTiles}  className = "link-options" to = '/tiles'>Calendar</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/lesson'>Lesson</NavLink>
+        <NavLink activeClassName = 'active-link' className = "link-options" to = '/maps'>Maps</NavLink>
+        <NavLink activeClassName = 'active-link' className = "link-options" to = '/familyTree'>Family Tree</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/timeline'>Timeline</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/gallery'>Gallery</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/print'>Print</NavLink>
         {/* <Link className = "link-options" to = '/index'>Index</Link> */}
         {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>

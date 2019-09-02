@@ -41,6 +41,21 @@ input {
   display: none;
 }
 
+.active-link {
+  zoom: 1.3;
+  padding-top: 3px;
+
+}
+
+.active-link:before {
+  content: '\271D';
+}
+
+.active-link:after {
+  content: '\271D';
+}
+
+
 @font-face {
   font-family: 'Gabriola';
   src: url('../../Fonts/Gabriola.woff2') format('woff2'),
