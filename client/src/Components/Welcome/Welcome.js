@@ -22,6 +22,7 @@ class Welcome extends Component {
     if (performance.navigation.type == 1) {
       return <Redirect to='/' />
     }
+
     return (
         <div onClick = {this.goToTiles} className= "outer-div-welcome">
         

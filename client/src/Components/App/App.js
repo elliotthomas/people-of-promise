@@ -235,6 +235,10 @@ render() {
   window.onpopstate  = (e) => {
     return <Redirect to='/' />
  }
+
+ if (performance.navigation.type == 1) {
+  return <Redirect to='/' />
+}
     return (
       <Router>
       <div className="App">
@@ -246,7 +250,7 @@ render() {
         <NavLink activeClassName = 'active-link' className = "link-options" to = '/familyTree'>Family Tree</NavLink>
         <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/timeline'>Timeline</NavLink>
         <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/gallery'>Gallery</NavLink>
-        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/print'>Print</NavLink>
+        <NavLink activeClassName = 'active-link' onClick = {this.changeHeaderColorYellow} className = "link-options" to = '/print'>Lesson PDF</NavLink>
         {/* <Link className = "link-options" to = '/index'>Index</Link> */}
         {/* <Link className = "link-options" to = '/addInfo'>Admin Page</Link> */}
         </header>
