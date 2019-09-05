@@ -12,6 +12,11 @@ class Welcome extends Component {
       tiles: true
     })
   }
+
+  goToPlc = () => {
+    var win = window.open('www.plcchurch.org', '_blank')
+    win.focus();
+  }
   
 
   render() {
@@ -24,11 +29,11 @@ class Welcome extends Component {
     }
 
     return (
-        <div onClick = {this.goToTiles} className= "outer-div-welcome">
+        <div className= "outer-div-welcome">
         
           {/* <h1 className = "big-heading">Welcome to People of Promise</h1> */}
               <h4 className = "welcome-heading big-heading">Welcome to People of Promise!</h4>
-              <div className ="scroll-welcome cover-image">
+              <div onClick = {this.goToTiles} className ="scroll-welcome cover-image">
               <div className ="columns-welcome">
               <h4 className = "welcome-heading">Welcome to People of Promise!</h4>
               <p className = "main-content">This resource is designed to introduce you to some of the remarkable people of the Bible and God’s amazing grace. A thread that runs throughout all the books of scripture is God’s promises and faithfulness. And people; ordinary people, like you and me, are the vessels through which God’s love and grace are revealed. From start to finish, from Genesis to Revelation, from Creation to New Creation, God poured his love into all that he said and did. The highlights and the ‘low-lives’ of how these were received are all recorded in the BIble. The scripture passages you will read are the unvarnished but inspired narrative of God’s redeeming love. It is the remarkable testimony of God’s embrace of life and humanity. As C.S. Lewis stated, in view of God’s relation to people; “God writes straight on crooked lines.” Enjoy this journey that travels through the words and witnesses of these very real people. And discover the enduring truth that God is for you!<br/><br/>St. Paul, in his second letter to the Corinthians, summarizes the encompassing grace of God’s Promises, “For all of the promises which God has made, they are ‘Yes’ in Christ. And through him the ‘Amen’ is spoken by us to the glory of God.” II Cor. 1:20 The Cross is how God underlined all of his promises. The Empty Tomb is God’s exclamation point! God is the God of second chances. Because of Jesus we know that nothing can separate us from the love of God! </p>
@@ -47,10 +52,12 @@ class Welcome extends Component {
               <div className ="columns-names">
               <p className = "main-content">Elliot Thomas<br/>Brooke Struck<br/>Ruth Haugstad<br/>Ami Schlampp
               <br/>Mike Duffy<br/>Connie Priez<br/>Kerry Dressen<br/>Tonsha Belland<br/>Dan Segersin<br/>Brent Kastler<br/>
-              Jill Sonnek<br/>Stephanie Kruger<br/>Melony Weathermon<br/><br/>Kris Paulsen<br/>Ann Pavelka<br/><br/>Pastor Joel Quie</p>
+              Jill Sonnek<br/>Stephanie Kruger<br/>Melony Weathermon<br/><br/>Kris Paulsen<br/>Ann Pavelka<br/></p>
+              </div>
+              <p className ='pq'>-Pastor Quie</p>
               </div>
               </div>
-              </div>
+              <div onClick = {this.goToPlc} className = 'plc-logo'></div>
         </div>
     );
   }

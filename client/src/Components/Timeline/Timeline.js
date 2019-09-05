@@ -89,11 +89,11 @@ class Timeline extends Component {
 
     return (
         <div style = {{backgroundImage: `url(${this.state.imageUrl})`}}  className = "timeline-container">
-        {this.state.showTimelineCara && <div className = 'arrow-container'>
+        {/* {this.state.showTimelineCara && <div className = 'arrow-container'>
         <div className = 'arrow-left' onClick = {this.backOne}></div>
         <h1 className = 'timeline-header'>Timeline {this.state.currentTimeline}/6</h1>
         <div className = 'arrow-right' onClick = {this.forwardOne}></div>
-        </div>}
+        </div>} */}
         </div>
     );
   }

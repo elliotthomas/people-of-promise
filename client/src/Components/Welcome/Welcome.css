@@ -1,10 +1,9 @@
 
 .outer-div-welcome {
     max-width: 100%;
-    height: 1750px;
+    height: 1700px;
     margin: 0 auto;
     background-color: rgb(240, 220, 130)!important;
-    cursor: pointer;
     top: 0;
     position: absolute;
 }
@@ -18,7 +17,7 @@
 
 .welcome-heading {
     font-family: 'chalkdustregular';
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 15px;
 }
 
@@ -37,13 +36,14 @@
 .scroll-welcome{
 background-image: url("../../images/scroll.png");
 width: 100%;
-height: 0;
-padding-bottom: 131%;
+height: 1475px;
 margin: 0 auto;
 margin-top: -75px;
 background-size: 100% 100%!important;
 position: relative;
+cursor: pointer;
 }
+
 
 
 .columns-names {
@@ -51,13 +51,11 @@ position: relative;
     width: 39%;
     position: absolute;
     left: 54.5%;
-    top: 66%;
+    top: 64%;
     line-height: 1.2;
     grid-column-gap: 0;
     column-gap: 0;
     column-fill: balance;
-
-    
 }
 
 .columns-welcome {
@@ -68,6 +66,23 @@ grid-column-gap: 13%;
 column-gap: 11%;
 column-fill: balance;
 font-size: 14pt;
-padding-top: 23%;
+padding-top: 18%;
 padding-left: 13%;
+}
+
+.plc-logo {
+    position: relative;
+    background-size: 100% 100%!important;
+    height: 200px;
+    margin: 0 auto;
+    width: 800px;
+    background-image: url("../../images/plc-logo.png");
+    cursor: pointer;
+}
+
+.pq {
+    position: absolute;
+    font-size: 18pt;
+    margin: 0;
+    top: 79%;
 }
