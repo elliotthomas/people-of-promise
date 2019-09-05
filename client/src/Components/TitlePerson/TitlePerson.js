@@ -22,8 +22,11 @@ class Lesson extends Component {
     citation: '',
     prayer: '',
     questions: '',
-    date: ''
-  }
+    date: '',
+    goToTimeline: false,
+    goToFamilyTree: false,
+    goToMaps: false
+}
 
 
   getOnePerson = async () => {
@@ -130,12 +133,42 @@ animations = new Controller({
   opacity: 0
 })
 
+goToTimeline = () => {
+this.setState({
+  goToTimeline: true
+})
+}
+
+goToFamilyTree = () => {
+  this.setState({
+    goToFamilyTree: true
+  })
+  }
+
+  goToMaps = () => {
+    this.setState({
+      goToMaps: true
+    })
+    }
+
   render() {
     if(!this.props.date){
       return <Redirect to='/' />
     }
     if(this.state.goToLesson) {
       return <Redirect to='/lesson' />
+    }
+
+    if(this.state.goToTimeline) {
+      return <Redirect to='/timeline' />
+    }
+
+    if(this.state.goToFamilyTree) {
+      return <Redirect to='/familyTree' />
+    }
+
+    if(this.state.goToMaps) {
+      return <Redirect to='/maps' />
     }
 
     if(!this.state.questions) {
@@ -148,7 +181,7 @@ animations = new Controller({
 
     return (
         <animated.div className= "outer-div" style = {props}>
-            <p className = "intro-welcome" >Welcome to this week’s People of Promise! You are invited to dig into the rich resources provided by this online platform. Please explore the menu bar above and check out the tools that will help give context to this week's Lesson. The <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#timeline'>Timeline</a>, the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#familyTree'>Family Tree</a> and <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#maps'>Maps</a> are useful to set the promise in context. Also enter the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#gallery'>Gallery</a> each week and let the various works of art open your eyes to new insights to understand the message of the passage. </p>
+            <p className = "intro-welcome" >Welcome to this week’s People of Promise! You are invited to dig into the rich resources provided by this online platform. Please explore the menu bar above and check out the tools that will help give context to this week's Lesson. The <a onClick={this.goToTimeline}>Timeline</a>, the <a onClick={this.goToFamilyTree}>Family Tree</a> and <a onClick={this.goToMaps}>Maps</a> are useful to set the promise in context. Also enter the <a onClick={this.props.clickLink} data-value = {this.state.name} href= '#gallery'>Gallery</a> each week and let the various works of art open your eyes to new insights to understand the message of the passage. </p>
             <div className ="scroll cover-image">
             <div className ="columns">
             <h4 className = "text-heading">Introduction</h4>
