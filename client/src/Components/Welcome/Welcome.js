@@ -52,12 +52,12 @@ class Welcome extends Component {
               <div className ="columns-names">
               <p className = "main-content">Elliot Thomas<br/>Brooke Struck<br/>Ruth Haugstad<br/>Ami Schlampp
               <br/>Mike Duffy<br/>Connie Priez<br/>Kerry Dressen<br/>Tonsha Belland<br/>Dan Segersin<br/>Brent Kastler<br/>
-              Jill Sonnek<br/>Stephanie Kruger<br/>Melony Weathermon<br/><br/>Kris Paulsen<br/>Ann Pavelka<br/></p>
+              Jill Sonnek<br/>Stephanie Kruger<br/>Melony Weathermon<br/>Kris Paulsen<br/>Ann Pavelka<br/></p>
               </div>
               <p className ='pq'>-Pastor Quie</p>
               </div>
               </div>
-              <div onClick = {this.goToPlc} className = 'plc-logo'></div>
+              <div className = 'plc-logo'></div>
         </div>
     );
   }
