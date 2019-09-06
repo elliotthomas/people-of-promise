@@ -12,7 +12,7 @@ class IntroPerson extends Component {
   }
 
   componentDidMount () {
-    setInterval(() => this.setState({ goToLesson: true}), 2000)
+    setInterval(() => this.setState({ goToLesson: true}), 5000)
   }
 
   state = {
@@ -91,6 +91,12 @@ class IntroPerson extends Component {
     
   }
 
+  goToLesson = () => {
+    this.setState({
+      goToLesson: true
+    })
+  }
+
   animations = new Controller({opacity: 0})
 
 
@@ -107,7 +113,7 @@ class IntroPerson extends Component {
     const props = this.animations.update({opacity: 1})
 
     return (
-            <animated.div className = "background-border" style ={props}>
+            <animated.div onClick = {this.goToLesson} className = "background-border" style ={props}>
             <div style = {{backgroundImage: `url(${this.state.borderUrl})`}} className ="border-image" >
             <h1 className = "p-o-p" style = {{color: `${this.state.headingColor}`}}>People of Promise</h1>
             <h1 className = "intro-name">{this.state.name}</h1>

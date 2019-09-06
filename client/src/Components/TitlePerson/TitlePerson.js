@@ -197,6 +197,7 @@ goToFamilyTree = () => {
             <p className ="prayer">{this.state.prayer}</p>
             </div>
             </div>
+            <div className = 'plc-logo-person'></div>
         </animated.div>
     );
   }
